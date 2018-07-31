@@ -14,7 +14,7 @@ In this exercise we'll explore the session tracking capabilities present in BIG-
 Task 1: Create a Security Policy and Enable Logging
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-#.  Open your browser of choice and navigate to the BIG-IP management interface.  For the purposes of this lab you can find it at ``https://10.1.1.245/`` or by clicking on the **bigip01** shortcut in Firefox.
+#.  Open your browser of choice and navigate to the BIG-IP management interface.  For the purposes of this lab you can find it at ``https://10.1.1.245/`` or by clicking on the **bigip** shortcut in Firefox.
 
 #.  Login to the BIG-IP with the username: **f5student** and the password **f5DEMOs4u!**
 
@@ -50,7 +50,7 @@ Task 2: Define Login & Logout Pages
 
 #.  From the tab bar select **Logout Pages List** or navigate to **Security -> Application Security -> Sessions and Logins -> Logout Pages List**
 
-#.  Populate the form as shown below and click **Save**.
+#.  Populate the form as shown below and click **Create**.
 
         |lab21-5| 
 
