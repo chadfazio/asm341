@@ -46,13 +46,15 @@ Task 2 - Test Session Hijacking Protection
 
 #.  Go to the proxy tab and disable intercept so background requests from chrome don't get hung up.
 
-#.  Run ``chromium-browser --proxy-server="http://127.0.0.1:8080"`` in the same or a different terminal.
+#.  Run ``google-chrome-stable --incognito --proxy-server="http://127.0.0.1:8080"`` in the same or a different terminal.
 
 #.  Open the WebGoat login page (``http://10.1.10.145/WebGoat/login``) in **Chrome** but do not log in.
 
 #.  Open a new private browsing window in **Firefox**, then type ``ctrl+shift+i`` to open inspector, and click the network tab.
     
-#.  Login to WebGoat (in **Firefox**) at ``http://10.1.10.145/WebGoat/login``
+#.  Navigate to WebGoat (in **Firefox**) at ``http://10.1.10.145/WebGoat/login`` and refresh the page 12 times.
+
+#.  Login to WebGoat (in **Firefox**).
 
 #.  Find the 200 request for ``start.mvc`` in the network debugging window and click on it. It should look like this:
 
