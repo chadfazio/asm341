@@ -259,37 +259,34 @@
 <h1>Lab 1.4: Protection from Parameter Exploits<a class="headerlink" href="#lab-1-4-protection-from-parameter-exploits" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="task-1-parameter-learning">
 <h2>Task 1 - Parameter Learning<a class="headerlink" href="#task-1-parameter-learning" title="Permalink to this headline">¶</a></h2>
-<ol class="arabic simple">
-<li>Just like we can teach ASM the URLs that are allowed, we can also train it for the parameters it sees. Parameter learning is the most efficient way to inject these attributes.</li>
-<li><dl class="first docutils">
-<dt>To configure Parameter learning, navigate to <strong>Security -&gt; Application Security -&gt; Security Policies</strong> and click on “View Learning and Blocking Settings” .</dt>
-<dd><img alt="lab4-2" src="../../_images/lab4-2.png" /></dd>
-</dl>
+<ol class="arabic">
+<li><p class="first">Just like we can teach ASM the URLs that are allowed, we can also train it for the parameters it sees. Parameter learning is the most efficient way to inject these attributes.</p>
 </li>
-<li><dl class="first docutils">
-<dt>Check the “Learn” box for <strong>Illegal Parameter</strong> .</dt>
-<dd><img alt="lab4-1" src="../../_images/lab4-1.png" /></dd>
-</dl>
+<li><p class="first">To configure Parameter learning, navigate to <strong>Security -&gt; Application Security -&gt; Security Policies</strong> and click on “View Learning and Blocking Settings” .</p>
+<p><a class="reference internal" href="../../_images/lab4-2.png"><img alt="lab4-2" src="../../_images/lab4-2.png" style="width: 800px;" /></a></p>
 </li>
-<li>Click <strong>Apply Policy</strong> .</li>
+<li><p class="first">Check the “Learn” box for <strong>Illegal Parameter</strong> .</p>
+<p><a class="reference internal" href="../../_images/lab4-1.png"><img alt="lab4-1" src="../../_images/lab4-1.png" style="width: 800px;" /></a></p>
+</li>
+<li><p class="first">Click <strong>Apply Policy</strong> .</p>
+</li>
 </ol>
 </div>
 <div class="section" id="task-2-parameter-restriction">
 <h2>Task 2 - Parameter Restriction<a class="headerlink" href="#task-2-parameter-restriction" title="Permalink to this headline">¶</a></h2>
-<ol class="arabic simple">
-<li><dl class="first docutils">
-<dt>For any parameter the data type, metachatacters, and attack signatures can be customized at any time.  (These configurations will also change as parameter learning progreses) .</dt>
-<dd><img alt="lab4-3" src="../../_images/lab4-3.png" /></dd>
-</dl>
+<ol class="arabic">
+<li><p class="first">For any parameter the data type, metachatacters, and attack signatures can be customized at any time.  (These configurations will also change as parameter learning progreses) .</p>
+<p><a class="reference internal" href="../../_images/lab4-3.png"><img alt="lab4-3" src="../../_images/lab4-3.png" style="width: 800px;" /></a></p>
 </li>
-<li><dl class="first docutils">
-<dt>When  you are ready to enforce your white listed paremeters proceed back to the Learning and Blocking Settings page and check the “Alarm” and “Block” boxes.</dt>
-<dd><img alt="lab4-4" src="../../_images/lab4-4.png" /></dd>
-</dl>
+<li><p class="first">When  you are ready to enforce your white listed paremeters proceed back to the Learning and Blocking Settings page and check the “Alarm” and “Block” boxes.</p>
+<p><a class="reference internal" href="../../_images/lab4-4.png"><img alt="lab4-4" src="../../_images/lab4-4.png" style="width: 800px;" /></a></p>
 </li>
-<li>Click <strong>Save</strong> .</li>
-<li>Click <strong>Apply Policy</strong> .</li>
-<li>If you are confident the application will not change, and therefore no new parameters will be required, you can remove the wildcard parameter.</li>
+<li><p class="first">Click <strong>Save</strong> .</p>
+</li>
+<li><p class="first">Click <strong>Apply Policy</strong> .</p>
+</li>
+<li><p class="first">If you are confident the application will not change, and therefore no new parameters will be required, you can remove the wildcard parameter.</p>
+</li>
 </ol>
 </div>
 </div>
