@@ -1,6 +1,7 @@
 Lab Environment & Topology 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. |lab-diag| image:: images/Agility2018LabDiagram.png
+
+..  |lab-diag| image:: images/Agility2018LabDiagram.png
 
 .. WARNING:: All work is done from the Linux client/jumphost (client01), which can be access via RDP (Windows Remote Desktop) or ssh. No installation or interaction with your local system is required.
 

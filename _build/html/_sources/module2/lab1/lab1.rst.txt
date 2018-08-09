@@ -16,7 +16,7 @@ Task 1: Create a Security Policy and Enable Logging
 
 #.  Open your browser of choice and navigate to the BIG-IP management interface.  For the purposes of this lab you can find it at ``https://10.1.1.245/`` or by clicking on the **bigip** shortcut in Firefox.
 
-#.  Login to the BIG-IP with the username: **f5student** and the password **f5DEMOs4u!**
+#.  Login to the BIG-IP with the username: **f5student** and the password **password**
 
 #.  Create a new ASM policy by navigating to **Security -> Application Security -> Security policies**.
 
@@ -74,7 +74,7 @@ Task 4: Test Session Tracking
 
 #.  Click on the select all **checkbox** to the far left of the filter bar then **Delete Requests** or if given the option **Delete all Requests**.  This will make it easier to review the logs from the next step.
 
-#.  Open a private browsing window and navigate to ``http://10.1.10.145/WebGoat/login``, then login to the WebGoat app with the credentials **f5student** / **f5DEMOs4u!**
+#.  Open a private browsing window and navigate to ``http://10.1.10.145/WebGoat/login``, then login to the WebGoat app with the credentials **f5student** / **password**
 
 #.  Return to the BIG-IP interface.
 

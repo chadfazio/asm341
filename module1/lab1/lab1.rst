@@ -25,7 +25,7 @@ Task 1 - Create a Security Policy and Enable Logging
 Task 1 - Create a Security Policy and Enable Logging
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 #.  Browse to the BIGIP management console by opening FireFox and clicking on the **bigip01** shortcut.
-#.  Login with the credentials username: **f5student** and the password: **f5DEMOs4u!**
+#.  Login with the credentials username: **f5student** and the password: **password**
 #.  Create a new ASM policy by navigating to **Security -> Application Security -> Security policies**.
 #.  Click **Create New Policy** and fill in the page as follows, then click **Create policy**
 	|lab1-1|
@@ -42,7 +42,7 @@ Task 1 - Create a Security Policy and Enable Logging
 
 Task 2 - Examine the Allowed URLs list
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-#.  Open a new firefox tab and login to ``http://10.1.10.145/WebGoat`` (credentials are f5student / f5DEMOs4u!)
+#.  Open a new firefox tab and login to ``http://10.1.10.145/WebGoat`` (credentials are f5student / password)
 #.  Explore around the app.  Notice as you click between (for instance) **Injection Flaws**  and **Authentication Flaws**  that the URL changes to correspond to the page.  We can use this information to build policy in our WAF.
 #.  Return to the BIG-IP UI and navigate to **Security -> Application Security -> URLs -> Allowed URLs**
         |lab1-3|
