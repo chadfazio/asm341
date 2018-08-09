@@ -260,38 +260,37 @@
         
   <div class="section" id="lab-1-1-allowed-url-list">
 <h1>Lab 1.1: Allowed URL List<a class="headerlink" href="#lab-1-1-allowed-url-list" title="Permalink to this headline">¶</a></h1>
-<p>Task 1 - Create a Security Policy and Enable Logging</p>
 <div class="section" id="task-1-create-a-security-policy-and-enable-logging">
 <h2>Task 1 - Create a Security Policy and Enable Logging<a class="headerlink" href="#task-1-create-a-security-policy-and-enable-logging" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic simple">
 <li>Browse to the BIGIP management console by opening FireFox and clicking on the <strong>bigip01</strong> shortcut.</li>
 <li>Login with the credentials username: <strong>f5student</strong> and the password: <strong>password</strong></li>
-<li>Create a new ASM policy by navigating to <strong>Security -&gt; Application Security -&gt; Security policies</strong>.</li>
+<li>Create a new ASM policy by navigating to <strong>Security -&gt; Application Security -&gt; Security Policies</strong>.</li>
 <li><dl class="first docutils">
 <dt>Click <strong>Create New Policy</strong> and fill in the page as follows, then click <strong>Create policy</strong></dt>
-<dd><img alt="lab1-1" src="../../_images/lab1-1update.png" /></dd>
+<dd><a class="reference internal" href="../../_images/lab1-1update.png"><img alt="lab1-1" src="../../_images/lab1-1update.png" style="width: 800px;" /></a></dd>
 </dl>
 </li>
 <li>Navigate to <strong>Local Traffic -&gt; Virtual Servers</strong> and select the “asm_vs” virtual server.</li>
 <li><dl class="first docutils">
 <dt>Click the Security tab and select policies to view Policy settings.</dt>
-<dd><img alt="lab1-update" src="../../_images/lab1-update.png" /></dd>
+<dd><a class="reference internal" href="../../_images/lab1-update.png"><img alt="lab1-update" src="../../_images/lab1-update.png" style="width: 800px;" /></a></dd>
 </dl>
 </li>
 <li><dl class="first docutils">
 <dt>Enable logging profiles then add the “Log All Requests” profile as shown below, and click <strong>update</strong></dt>
-<dd><img alt="lab1-2" src="../../_images/lab1-2.png" /></dd>
+<dd><a class="reference internal" href="../../_images/lab1-2.png"><img alt="lab1-2" src="../../_images/lab1-2.png" style="width: 800px;" /></a></dd>
 </dl>
 </li>
 <li>Finally, lets configure this ASM policy to Alarm on “Illegal URLs”.  Navigate to <strong>Security -&gt; Application Security -&gt; Security Policies</strong>.</li>
 <li><dl class="first docutils">
 <dt>Click “View Learning and Blocking Settings”</dt>
-<dd><img alt="lab1-update2" src="../../_images/lab1-update2.png" /></dd>
+<dd><a class="reference internal" href="../../_images/lab1-update2.png"><img alt="lab1-update2" src="../../_images/lab1-update2.png" style="width: 800px;" /></a></dd>
 </dl>
 </li>
 <li><dl class="first docutils">
 <dt>Expand the “URLs” dropdown and check Alarm</dt>
-<dd><img alt="lab1-6" src="../../_images/lab1-6update.png" /></dd>
+<dd><a class="reference internal" href="../../_images/lab1-6update.png"><img alt="lab1-6" src="../../_images/lab1-6update.png" style="width: 800px;" /></a></dd>
 </dl>
 </li>
 </ol>
@@ -303,18 +302,18 @@
 <li>Explore around the app.  Notice as you click between (for instance) <strong>Injection Flaws</strong>  and <strong>Authentication Flaws</strong>  that the URL changes to correspond to the page.  We can use this information to build policy in our WAF.</li>
 <li><dl class="first docutils">
 <dt>Return to the BIG-IP UI and navigate to <strong>Security -&gt; Application Security -&gt; URLs -&gt; Allowed URLs</strong></dt>
-<dd><img alt="lab1-3" src="../../_images/lab1-3.png" /></dd>
+<dd><a class="reference internal" href="../../_images/lab1-3.png"><img alt="lab1-3" src="../../_images/lab1-3.png" style="width: 800px;" /></a></dd>
 </dl>
 </li>
 <li>Our WAF is currently set to allow <strong>any</strong> URL as represented by the wildcard entries.</li>
 <li><dl class="first docutils">
 <dt>We can verify the WAF is seeing the traffic by navigating to <strong>Security -&gt; Event Logs -&gt; Application -&gt; Requests</strong> and inspecting the entries.</dt>
-<dd><img alt="lab1-4" src="../../_images/lab1-4update.png" /></dd>
+<dd><a class="reference internal" href="../../_images/lab1-4update.png"><img alt="lab1-4" src="../../_images/lab1-4update.png" style="width: 800px;" /></a></dd>
 </dl>
 </li>
 <li><dl class="first docutils">
 <dt>Don’t forget to clear the “Illegal Requests” filter!</dt>
-<dd><img alt="lab1-5" src="../../_images/lab1-5.png" /></dd>
+<dd><a class="reference internal" href="../../_images/lab1-5.png"><img alt="lab1-5" src="../../_images/lab1-5.png" style="width: 800px;" /></a></dd>
 </dl>
 </li>
 </ol>
@@ -325,25 +324,25 @@
 <li>Return to the Allowed URLs list.</li>
 <li><dl class="first docutils">
 <dt>Delete the HTTP and HTTPS Wildcard entries.</dt>
-<dd><img alt="lab1-7" src="../../_images/lab1-7update.png" /></dd>
+<dd><a class="reference internal" href="../../_images/lab1-7update.png"><img alt="lab1-7" src="../../_images/lab1-7update.png" style="width: 800px;" /></a></dd>
 </dl>
 </li>
 <li>Click the <strong>Apply Policy</strong> button.</li>
 <li>Attempt to browse the test site <code class="docutils literal notranslate"><span class="pre">http://10.1.10.145/WebGoat</span></code> , what are your results?</li>
 <li><dl class="first docutils">
 <dt>We are still able to browse because our policy is not configured to block for Illegal URLs.  Return to the “View Learning and Blocking Settings” page.</dt>
-<dd><img alt="lab1-update2" src="../../_images/lab1-update2.png" /></dd>
+<dd><a class="reference internal" href="../../_images/lab1-update2.png"><img alt="lab1-update2" src="../../_images/lab1-update2.png" style="width: 800px;" /></a></dd>
 </dl>
 </li>
 <li><dl class="first docutils">
 <dt>Check the Block box for Illegal URLs.  Click <strong>Save</strong> followed by <strong>Apply Policy</strong></dt>
-<dd><img alt="lab1-update3" src="../../_images/lab1-update3.png" /></dd>
+<dd><a class="reference internal" href="../../_images/lab1-update3.png"><img alt="lab1-update3" src="../../_images/lab1-update3.png" style="width: 800px;" /></a></dd>
 </dl>
 </li>
 <li>Attempt to browse the test site <code class="docutils literal notranslate"><span class="pre">http://10.1.10.145/WebGoat</span></code> , what are your results?</li>
 <li><dl class="first docutils">
 <dt>Now lets add an Allowed URL.  Click the <strong>Create</strong> button and create an allowed URL with the following settings:</dt>
-<dd><img alt="lab1-8" src="../../_images/lab1-8.png" /></dd>
+<dd><a class="reference internal" href="../../_images/lab1-8.png"><img alt="lab1-8" src="../../_images/lab1-8.png" style="width: 800px;" /></a></dd>
 </dl>
 </li>
 <li>Click <strong>Apply Policy</strong>.</li>
@@ -359,7 +358,7 @@
 <li>Create explict URLs to allow access to <strong>only</strong> the login page, landing page, and Insecure Login Page.</li>
 <li><dl class="first docutils">
 <dt>Hint: use the information in the Illegal Requests log to build explicit and wildcard URLs to fully render pages.</dt>
-<dd><img alt="lab1-task4" src="../../_images/lab1-task4.png" /></dd>
+<dd><a class="reference internal" href="../../_images/lab1-task4.png"><img alt="lab1-task4" src="../../_images/lab1-task4.png" style="width: 800px;" /></a></dd>
 </dl>
 </li>
 </ol>

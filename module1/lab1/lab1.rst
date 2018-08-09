@@ -1,32 +1,39 @@
 Lab 1.1: Allowed URL List
 ----------------------------------------
 
-.. |lab-1| image:: images/lab-1.png
 .. |lab1-1| image:: images/lab1-1update.png
+        :width: 800px
 .. |lab1-2| image:: images/lab1-2.png
+        :width: 800px
 .. |lab1-3| image:: images/lab1-3.png
+        :width: 800px
 .. |lab1-4| image:: images/lab1-4update.png
+        :width: 800px
 .. |lab1-5| image:: images/lab1-5.png
+        :width: 800px
 .. |lab1-6| image:: images/lab1-6update.png
+        :width: 800px
 .. |lab1-7| image:: images/lab1-7update.png
+        :width: 800px
 .. |lab1-8| image:: images/lab1-8.png
+        :width: 800px
 .. |lab1-update| image:: images/lab1-update.png
+        :width: 800px
 .. |lab1-update2| image:: images/lab1-update2.png
+        :width: 800px
 .. |lab1-update3| image:: images/lab1-update3.png
+        :width: 800px
 .. |lab1-task4| image:: images/lab1-task4.png
+        :width: 800px
 .. |lab1-task5| image:: images/lab1-task5.png
-
-
-
-Task 1 - Create a Security Policy and Enable Logging
-
+        :width: 800px
 
 
 Task 1 - Create a Security Policy and Enable Logging
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 #.  Browse to the BIGIP management console by opening FireFox and clicking on the **bigip01** shortcut.
 #.  Login with the credentials username: **f5student** and the password: **password**
-#.  Create a new ASM policy by navigating to **Security -> Application Security -> Security policies**.
+#.  Create a new ASM policy by navigating to **Security -> Application Security -> Security Policies**.
 #.  Click **Create New Policy** and fill in the page as follows, then click **Create policy**
 	|lab1-1|
 #.  Navigate to **Local Traffic -> Virtual Servers** and select the "asm_vs" virtual server.
