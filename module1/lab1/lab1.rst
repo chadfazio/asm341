@@ -32,24 +32,24 @@ Lab 1.1: Allowed URL List
 Task 1 - Create a Security Policy and Enable Logging
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 #.  Browse to the BIGIP management console by opening FireFox and clicking on the **bigip01** shortcut.
-#.  Login with the credentials username: **f5student** and the password: **password**
+#.  Login with the credentials username: **f5student** and the password: **password**.
 #.  Create a new ASM policy by navigating to **Security -> Application Security -> Security Policies**.
-#.  Click **Create New Policy** and fill in the page as follows, then click **Create policy**
+#.  Click **Create New Policy** and fill in the page as follows, then click **Create policy**.
 	|lab1-1|
 #.  Navigate to **Local Traffic -> Virtual Servers** and select the "asm_vs" virtual server.
 #.  Click the Security tab and select policies to view Policy settings.
         |lab1-update|
-#.  Enable logging profiles then add the "Log All Requests" profile as shown below, and click **update**
+#.  Enable logging profiles then add the "Log All Requests" profile as shown below, and click **update**.
 	|lab1-2|
 #.  Finally, lets configure this ASM policy to Alarm on "Illegal URLs".  Navigate to **Security -> Application Security -> Security Policies**.
-#.  Click "View Learning and Blocking Settings"
+#.  Click "View Learning and Blocking Settings".
         |lab1-update2|
-#.  Expand the "URLs" dropdown and check Alarm
+#.  Expand the "URLs" dropdown and check Alarm.
         |lab1-6|
 
 Task 2 - Examine the Allowed URLs list
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-#.  Open a new firefox tab and login to ``http://10.1.10.145/WebGoat`` (credentials are f5student / password)
+#.  Open a new firefox tab and login to ``http://10.1.10.145/WebGoat`` (credentials are f5student / password).
 #.  Explore around the app.  Notice as you click between (for instance) **Injection Flaws**  and **Authentication Flaws**  that the URL changes to correspond to the page.  We can use this information to build policy in our WAF.
 #.  Return to the BIG-IP UI and navigate to **Security -> Application Security -> URLs -> Allowed URLs**
         |lab1-3|
@@ -68,7 +68,7 @@ Task 3 - Modify the Allowed URLs List
 #.  Attempt to browse the test site ``http://10.1.10.145/WebGoat`` , what are your results?  
 #.  We are still able to browse because our policy is not configured to block for Illegal URLs.  Return to the "View Learning and Blocking Settings" page.
         |lab1-update2|
-#.  Check the Block box for Illegal URLs.  Click **Save** followed by **Apply Policy**
+#.  Check the Block box for Illegal URLs.  Click **Save** followed by **Apply Policy**.
         |lab1-update3|
 #.  Attempt to browse the test site ``http://10.1.10.145/WebGoat`` , what are your results?
 #.  Now lets add an Allowed URL.  Click the **Create** button and create an allowed URL with the following settings:
@@ -79,15 +79,15 @@ Task 3 - Modify the Allowed URLs List
 Task 4 - Create Explicit Allowed URLs
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 #.  Now that we've seen how wildcard URLs work, let's get the site to work with explict URLs.
-#.  Delete the Wildcard URL /WebGoat/
-#.  Click **Apply Policy**
+#.  Delete the Wildcard URL /WebGoat/  .
+#.  Click **Apply Policy**.
 #.  Create explict URLs to allow access to **only** the login page, landing page, and Insecure Login Page.
-#.  Hint: use the information in the Illegal Requests log to build explicit and wildcard URLs to fully render pages.
+#.  Hint: Use the information in the Illegal Requests log to build explicit and wildcard URLs to fully render pages.
         |lab1-task4|
 
 
 Task 6 - Lab Cleanup
 ~~~~~~~~~~~~~~~~~~~~~
 #.  Let's cleanup and prepare for the next module by deleting the lab1 policy we've been using.
-#.  Navigate to **Security -> Application Security -> Security Policies**
+#.  Navigate to **Security -> Application Security -> Security Policies**.
 #.  Click "Delete".
