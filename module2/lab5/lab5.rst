@@ -2,17 +2,29 @@ Lab 2.5: DAST Integration
 -------------------------
 
 ..  |lab25-1| image:: images/lab25-1.png
+        :width: 800px
 ..  |lab25-2| image:: images/lab25-2.png
+        :width: 800px
 ..  |lab25-3| image:: images/lab25-3.png
+        :width: 800px
 ..  |lab25-4| image:: images/lab25-4.png
+        :width: 800px
 ..  |lab25-5| image:: images/lab25-5.png
+        :width: 800px
 ..  |lab25-6| image:: images/lab25-6.png
+        :width: 800px
 ..  |lab25-7| image:: images/lab25-7.png
+        :width: 800px
 ..  |lab25-8| image:: images/lab25-8.png
+        :width: 800px
 ..  |lab25-9| image:: images/lab25-9.png
+        :width: 800px
 ..  |lab25-10| image:: images/lab25-10.png
+        :width: 800px
 ..  |lab25-11| image:: images/lab25-11.png
+        :width: 800px
 ..  |lab25-12| image:: images/lab25-12.png
+        :width: 800px
 
 
 ASM's DAST (Dynamic Application Security Testing) integration allows you to take the programmatic output from a vulnerability scan and use it to seed a security policy.  For this lab, we'll use output from WhiteHat's Sentinel(TM) product to create a security policy based on Sentinel's findings.

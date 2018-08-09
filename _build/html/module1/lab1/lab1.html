@@ -304,72 +304,66 @@
 </div>
 <div class="section" id="task-2-examine-the-allowed-urls-list">
 <h2>Task 2 - Examine the Allowed URLs list<a class="headerlink" href="#task-2-examine-the-allowed-urls-list" title="Permalink to this headline">¶</a></h2>
-<div class="line-block">
-<div class="line"><br /></div>
-</div>
-<ol class="arabic simple">
-<li>Open a new firefox tab and login to <code class="docutils literal notranslate"><span class="pre">http://10.1.10.145/WebGoat</span></code> (credentials are f5student / password).</li>
-<li>Explore around the app.  Notice as you click between (for instance) <strong>Injection Flaws</strong>  and <strong>Authentication Flaws</strong>  that the URL changes to correspond to the page.  We can use this information to build policy in our WAF.</li>
-<li><dl class="first docutils">
-<dt>Return to the BIG-IP UI and navigate to <strong>Security -&gt; Application Security -&gt; URLs -&gt; Allowed URLs</strong></dt>
-<dd><a class="reference internal" href="../../_images/lab1-3.png"><img alt="lab1-3" src="../../_images/lab1-3.png" style="width: 800px;" /></a></dd>
-</dl>
+<ol class="arabic">
+<li><p class="first">Open a new firefox tab and login to <code class="docutils literal notranslate"><span class="pre">http://10.1.10.145/WebGoat</span></code> (credentials are f5student / password).</p>
 </li>
-<li>Our WAF is currently set to allow <strong>any</strong> URL as represented by the wildcard entries.</li>
-<li><dl class="first docutils">
-<dt>We can verify the WAF is seeing the traffic by navigating to <strong>Security -&gt; Event Logs -&gt; Application -&gt; Requests</strong> and inspecting the entries.</dt>
-<dd><a class="reference internal" href="../../_images/lab1-4update.png"><img alt="lab1-4" src="../../_images/lab1-4update.png" style="width: 800px;" /></a></dd>
-</dl>
+<li><p class="first">Explore around the app.  Notice as you click between (for instance) <strong>Injection Flaws</strong>  and <strong>Authentication Flaws</strong>  that the URL changes to correspond to the page.  We can use this information to build policy in our WAF.</p>
 </li>
-<li><dl class="first docutils">
-<dt>Don’t forget to clear the “Illegal Requests” filter!</dt>
-<dd><a class="reference internal" href="../../_images/lab1-5.png"><img alt="lab1-5" src="../../_images/lab1-5.png" style="width: 800px;" /></a></dd>
-</dl>
+<li><p class="first">Return to the BIG-IP UI and navigate to <strong>Security -&gt; Application Security -&gt; URLs -&gt; Allowed URLs</strong></p>
+<p><a class="reference internal" href="../../_images/lab1-3.png"><img alt="lab1-3" src="../../_images/lab1-3.png" style="width: 800px;" /></a></p>
+</li>
+<li><p class="first">Our WAF is currently set to allow <strong>any</strong> URL as represented by the wildcard entries.</p>
+</li>
+<li><p class="first">We can verify the WAF is seeing the traffic by navigating to <strong>Security -&gt; Event Logs -&gt; Application -&gt; Requests</strong> and inspecting the entries.</p>
+<p><a class="reference internal" href="../../_images/lab1-4update.png"><img alt="lab1-4" src="../../_images/lab1-4update.png" style="width: 800px;" /></a></p>
+</li>
+<li><p class="first">Don’t forget to clear the “Illegal Requests” filter!</p>
+<p><a class="reference internal" href="../../_images/lab1-5.png"><img alt="lab1-5" src="../../_images/lab1-5.png" style="width: 800px;" /></a></p>
 </li>
 </ol>
 </div>
 <div class="section" id="task-3-modify-the-allowed-urls-list">
 <h2>Task 3 - Modify the Allowed URLs List<a class="headerlink" href="#task-3-modify-the-allowed-urls-list" title="Permalink to this headline">¶</a></h2>
-<ol class="arabic simple">
-<li>Return to the Allowed URLs list.</li>
-<li><dl class="first docutils">
-<dt>Delete the HTTP and HTTPS Wildcard entries.</dt>
-<dd><a class="reference internal" href="../../_images/lab1-7update.png"><img alt="lab1-7" src="../../_images/lab1-7update.png" style="width: 800px;" /></a></dd>
-</dl>
+<ol class="arabic">
+<li><p class="first">Return to the Allowed URLs list.</p>
 </li>
-<li>Click the <strong>Apply Policy</strong> button.</li>
-<li>Attempt to browse the test site <code class="docutils literal notranslate"><span class="pre">http://10.1.10.145/WebGoat</span></code> , what are your results?</li>
-<li><dl class="first docutils">
-<dt>We are still able to browse because our policy is not configured to block for Illegal URLs.  Return to the “View Learning and Blocking Settings” page.</dt>
-<dd><a class="reference internal" href="../../_images/lab1-update2.png"><img alt="lab1-update2" src="../../_images/lab1-update2.png" style="width: 800px;" /></a></dd>
-</dl>
+<li><p class="first">Delete the HTTP and HTTPS Wildcard entries.</p>
+<p><a class="reference internal" href="../../_images/lab1-7update.png"><img alt="lab1-7" src="../../_images/lab1-7update.png" style="width: 800px;" /></a></p>
 </li>
-<li><dl class="first docutils">
-<dt>Check the Block box for Illegal URLs.  Click <strong>Save</strong> followed by <strong>Apply Policy</strong>.</dt>
-<dd><a class="reference internal" href="../../_images/lab1-update3.png"><img alt="lab1-update3" src="../../_images/lab1-update3.png" style="width: 800px;" /></a></dd>
-</dl>
+<li><p class="first">Click the <strong>Apply Policy</strong> button.</p>
 </li>
-<li>Attempt to browse the test site <code class="docutils literal notranslate"><span class="pre">http://10.1.10.145/WebGoat</span></code> , what are your results?</li>
-<li><dl class="first docutils">
-<dt>Now lets add an Allowed URL.  Click the <strong>Create</strong> button and create an allowed URL with the following settings:</dt>
-<dd><a class="reference internal" href="../../_images/lab1-8.png"><img alt="lab1-8" src="../../_images/lab1-8.png" style="width: 800px;" /></a></dd>
-</dl>
+<li><p class="first">Attempt to browse the test site <code class="docutils literal notranslate"><span class="pre">http://10.1.10.145/WebGoat</span></code> , what are your results?</p>
 </li>
-<li>Click <strong>Apply Policy</strong>.</li>
-<li>Test site again, are you able to browse?</li>
+<li><p class="first">We are still able to browse because our policy is not configured to block for Illegal URLs.  Return to the “View Learning and Blocking Settings” page.</p>
+<p><a class="reference internal" href="../../_images/lab1-update2.png"><img alt="lab1-update2" src="../../_images/lab1-update2.png" style="width: 800px;" /></a></p>
+</li>
+<li><p class="first">Check the Block box for Illegal URLs.  Click <strong>Save</strong> followed by <strong>Apply Policy</strong>.</p>
+<p><a class="reference internal" href="../../_images/lab1-update3.png"><img alt="lab1-update3" src="../../_images/lab1-update3.png" style="width: 800px;" /></a></p>
+</li>
+<li><p class="first">Attempt to browse the test site <code class="docutils literal notranslate"><span class="pre">http://10.1.10.145/WebGoat</span></code> , what are your results?</p>
+</li>
+<li><p class="first">Now lets add an Allowed URL.  Click the <strong>Create</strong> button and create an allowed URL with the following settings:</p>
+<p><a class="reference internal" href="../../_images/lab1-8.png"><img alt="lab1-8" src="../../_images/lab1-8.png" style="width: 800px;" /></a></p>
+</li>
+<li><p class="first">Click <strong>Apply Policy</strong>.</p>
+</li>
+<li><p class="first">Test site again, are you able to browse?</p>
+</li>
 </ol>
 </div>
 <div class="section" id="task-4-create-explicit-allowed-urls">
 <h2>Task 4 - Create Explicit Allowed URLs<a class="headerlink" href="#task-4-create-explicit-allowed-urls" title="Permalink to this headline">¶</a></h2>
-<ol class="arabic simple">
-<li>Now that we’ve seen how wildcard URLs work, let’s get the site to work with explict URLs.</li>
-<li>Delete the Wildcard URL /WebGoat/  .</li>
-<li>Click <strong>Apply Policy</strong>.</li>
-<li>Create explict URLs to allow access to <strong>only</strong> the login page, landing page, and Insecure Login Page.</li>
-<li><dl class="first docutils">
-<dt>Hint: Use the information in the Illegal Requests log to build explicit and wildcard URLs to fully render pages.</dt>
-<dd><a class="reference internal" href="../../_images/lab1-task4.png"><img alt="lab1-task4" src="../../_images/lab1-task4.png" style="width: 800px;" /></a></dd>
-</dl>
+<ol class="arabic">
+<li><p class="first">Now that we’ve seen how wildcard URLs work, let’s get the site to work with explict URLs.</p>
+</li>
+<li><p class="first">Delete the Wildcard URL /WebGoat/  .</p>
+</li>
+<li><p class="first">Click <strong>Apply Policy</strong>.</p>
+</li>
+<li><p class="first">Create explict URLs to allow access to <strong>only</strong> the login page, landing page, and Insecure Login Page.</p>
+</li>
+<li><p class="first">Hint: Use the information in the Illegal Requests log to build explicit and wildcard URLs to fully render pages.</p>
+<p><a class="reference internal" href="../../_images/lab1-task4.png"><img alt="lab1-task4" src="../../_images/lab1-task4.png" style="width: 800px;" /></a></p>
 </li>
 </ol>
 </div>

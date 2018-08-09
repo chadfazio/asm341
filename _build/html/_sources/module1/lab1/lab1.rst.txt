@@ -67,47 +67,76 @@ Task 1 - Create a Security Policy and Enable Logging
 Task 2 - Examine the Allowed URLs list
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-|
-
 #.  Open a new firefox tab and login to ``http://10.1.10.145/WebGoat`` (credentials are f5student / password).
+
 #.  Explore around the app.  Notice as you click between (for instance) **Injection Flaws**  and **Authentication Flaws**  that the URL changes to correspond to the page.  We can use this information to build policy in our WAF.
+
 #.  Return to the BIG-IP UI and navigate to **Security -> Application Security -> URLs -> Allowed URLs**
-        |lab1-3|
+
+    |lab1-3|
+
 #.  Our WAF is currently set to allow **any** URL as represented by the wildcard entries.
+
 #.  We can verify the WAF is seeing the traffic by navigating to **Security -> Event Logs -> Application -> Requests** and inspecting the entries.
-        |lab1-4|
+
+    |lab1-4|
+
 #.  Don't forget to clear the "Illegal Requests" filter!
-        |lab1-5|
+
+    |lab1-5|
 
 Task 3 - Modify the Allowed URLs List
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 #.  Return to the Allowed URLs list.
+
 #.  Delete the HTTP and HTTPS Wildcard entries.
-        |lab1-7|
+
+    |lab1-7|
+
 #.  Click the **Apply Policy** button.
+
 #.  Attempt to browse the test site ``http://10.1.10.145/WebGoat`` , what are your results?  
+
 #.  We are still able to browse because our policy is not configured to block for Illegal URLs.  Return to the "View Learning and Blocking Settings" page.
-        |lab1-update2|
+
+    |lab1-update2|
+
 #.  Check the Block box for Illegal URLs.  Click **Save** followed by **Apply Policy**.
-        |lab1-update3|
+
+    |lab1-update3|
+
 #.  Attempt to browse the test site ``http://10.1.10.145/WebGoat`` , what are your results?
+
 #.  Now lets add an Allowed URL.  Click the **Create** button and create an allowed URL with the following settings:
-        |lab1-8|
+
+    |lab1-8|
+
 #.  Click **Apply Policy**.
+
 #.  Test site again, are you able to browse?
 
 Task 4 - Create Explicit Allowed URLs
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 #.  Now that we've seen how wildcard URLs work, let's get the site to work with explict URLs.
+
 #.  Delete the Wildcard URL /WebGoat/  .
+
 #.  Click **Apply Policy**.
+
 #.  Create explict URLs to allow access to **only** the login page, landing page, and Insecure Login Page.
+
 #.  Hint: Use the information in the Illegal Requests log to build explicit and wildcard URLs to fully render pages.
-        |lab1-task4|
+
+    |lab1-task4|
 
 
 Task 6 - Lab Cleanup
 ~~~~~~~~~~~~~~~~~~~~~
+
 #.  Let's cleanup and prepare for the next module by deleting the lab1 policy we've been using.
+
 #.  Navigate to **Security -> Application Security -> Security Policies**.
+
 #.  Click "Delete".

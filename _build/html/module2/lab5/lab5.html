@@ -269,14 +269,14 @@
 </li>
 <li><p class="first">Click <strong>Create New Policy</strong>, fill in the page as follows, and then click <strong>create policy</strong> as shown below.</p>
 <blockquote>
-<div><p><img alt="lab25-1" src="../../_images/lab25-1.png" /></p>
+<div><p><a class="reference internal" href="../../_images/lab25-1.png"><img alt="lab25-1" src="../../_images/lab25-1.png" style="width: 800px;" /></a></p>
 </div></blockquote>
 </li>
 <li><p class="first">Once the policy is created, go to <strong>Security -&gt; Application Security -&gt; Vulnerability Assessments -&gt; Settings</strong>.</p>
 </li>
 <li><p class="first">Select <strong>WhiteHat Sentinel</strong> from the dropdown list.</p>
 <blockquote>
-<div><p><img alt="lab25-2" src="../../_images/lab25-2.png" /></p>
+<div><p><a class="reference internal" href="../../_images/lab25-2.png"><img alt="lab25-2" src="../../_images/lab25-2.png" style="width: 800px;" /></a></p>
 </div></blockquote>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
@@ -285,52 +285,52 @@
 </li>
 <li><p class="first">Select the <strong>Vulnerabilities</strong> tab at the top:</p>
 <blockquote>
-<div><p><img alt="lab25-3" src="../../_images/lab25-3.png" /></p>
+<div><p><a class="reference internal" href="../../_images/lab25-3.png"><img alt="lab25-3" src="../../_images/lab25-3.png" style="width: 800px;" /></a></p>
 </div></blockquote>
 </li>
 <li><p class="first"><strong>Click</strong> the <strong>import</strong> button:</p>
 <blockquote>
-<div><p><img alt="lab25-4" src="../../_images/lab25-4.png" /></p>
+<div><p><a class="reference internal" href="../../_images/lab25-4.png"><img alt="lab25-4" src="../../_images/lab25-4.png" style="width: 800px;" /></a></p>
 </div></blockquote>
 </li>
 <li><p class="first">Import the <strong>vuln.xml</strong> file from <strong>/home/f5student/Agility2018/ASM341</strong> .</p>
 <blockquote>
-<div><p><img alt="lab25-5" src="../../_images/lab25-5.png" /></p>
+<div><p><a class="reference internal" href="../../_images/lab25-5.png"><img alt="lab25-5" src="../../_images/lab25-5.png" style="width: 800px;" /></a></p>
 </div></blockquote>
 </li>
 <li><p class="first">The next screen would allow you to select findings associated with a specific domain which would be useful in a production environment where the scanner output may contain findings for more than one application.  For the purposes of our lab, ensure all domains are selected and click <strong>import</strong> once more.</p>
 <blockquote>
-<div><p><img alt="lab25-6" src="../../_images/lab25-6.png" /></p>
+<div><p><a class="reference internal" href="../../_images/lab25-6.png"><img alt="lab25-6" src="../../_images/lab25-6.png" style="width: 800px;" /></a></p>
 </div></blockquote>
 </li>
 <li><p class="first">You’ll then be greeted by a list of vulnerability types and an indication of whether or not they are resolvable by ASM:</p>
 <blockquote>
-<div><p><img alt="lab25-7" src="../../_images/lab25-7.png" /></p>
+<div><p><a class="reference internal" href="../../_images/lab25-7.png"><img alt="lab25-7" src="../../_images/lab25-7.png" style="width: 800px;" /></a></p>
 </div></blockquote>
 </li>
 <li><p class="first">Scroll down and select <strong>SQL Injection</strong> from the bottom then click on the first <strong>Vulnerability ID</strong>. You’ll be shown more details about the specific vulnerability such as the relevanit URL and Parameter where the vulnerability is present (as in this case).</p>
 <blockquote>
-<div><p><img alt="lab25-8" src="../../_images/lab25-8.png" /></p>
+<div><p><a class="reference internal" href="../../_images/lab25-8.png"><img alt="lab25-8" src="../../_images/lab25-8.png" style="width: 800px;" /></a></p>
 </div></blockquote>
 </li>
 <li><p class="first">Select the checkbox at the top to select all of the SQL injection vulnerabilities and click <strong>resolve</strong>.  Note that there are a number of other options including “Resolve and Stage” which would put the changes into staging for further evaluation.</p>
 <blockquote>
-<div><p><img alt="lab25-9" src="../../_images/lab25-9.png" /></p>
+<div><p><a class="reference internal" href="../../_images/lab25-9.png"><img alt="lab25-9" src="../../_images/lab25-9.png" style="width: 800px;" /></a></p>
 </div></blockquote>
 </li>
 <li><p class="first">ASM then provides a list of the changes it’s about to make.  Review the changes and click <strong>resolve</strong>.</p>
 <blockquote>
-<div><p><img alt="lab25-10" src="../../_images/lab25-10.png" /></p>
+<div><p><a class="reference internal" href="../../_images/lab25-10.png"><img alt="lab25-10" src="../../_images/lab25-10.png" style="width: 800px;" /></a></p>
 </div></blockquote>
 </li>
 <li><p class="first">You’ll notice that the vulnerabilities you selected are now marked mitigated.</p>
 <blockquote>
-<div><p><img alt="lab25-11" src="../../_images/lab25-11.png" /></p>
+<div><p><a class="reference internal" href="../../_images/lab25-11.png"><img alt="lab25-11" src="../../_images/lab25-11.png" style="width: 800px;" /></a></p>
 </div></blockquote>
 </li>
 <li><p class="first">Now navigate to <strong>Security -&gt; Application Security -&gt; Parameters -&gt; Parameters List</strong> and you’ll see that the ASM policy has been populated for you.</p>
 <blockquote>
-<div><p><img alt="lab25-12" src="../../_images/lab25-12.png" /></p>
+<div><p><a class="reference internal" href="../../_images/lab25-12.png"><img alt="lab25-12" src="../../_images/lab25-12.png" style="width: 800px;" /></a></p>
 </div></blockquote>
 </li>
 <li><p class="first">Now return to the Vulnerabilities dialog and explore some of the other items if you wish.</p>
