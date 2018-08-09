@@ -6,7 +6,7 @@ Lab 1.2: Allowed (and disallowed...) HTTP Request Methods
 
 Task 1 - Allowed Methods
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-#.  In the BIG-IP WebUI navigate to **Security -> Application Security -> Headers -> Methods** .
+#.  In the BIG-IP WebUI navigate to *Security -> Application Security -> Headers -> Methods* .
 	|lab2-1|
 #.  Policy wide Method permissions are configured here.  If your application requires a method beyond the default three, they can be added by clicking the **Create** button .
 	|lab2-3|
