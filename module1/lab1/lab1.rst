@@ -38,7 +38,7 @@ Task 1 - Create a Security Policy and Enable Logging
 
 #. Create a new ASM policy by navigating to **Security -> Application Security -> Security Policies**.
 
-#. Click **Create New Policy** and fill in the page as follows, then click **Create policy**.
+#. Click **Create New Policy** and fill in the page as follows, using lab1 as the name, then click **Create Policy**.
 
 	|lab1-1|
 
@@ -69,19 +69,19 @@ Task 2 - Examine the Allowed URLs list
 
 #.  Open a new firefox tab and login to ``http://10.1.10.145/WebGoat`` (credentials are f5student / password).
 
-#.  Explore around the app.  Notice as you click between (for instance) **Injection Flaws**  and **Authentication Flaws**  that the URL changes to correspond to the page.  We can use this information to build policy in our WAF.
+#.  Explore around the app.  Notice as you click between (for instance) **Injection Flaws**  and **Authentication Flaws**  that the URL changes to correspond to the page.  We can use this information to build our ASM policy.
 
-#.  Return to the BIG-IP UI and navigate to **Security -> Application Security -> URLs -> Allowed URLs**
-
-    |lab1-3|
+#.  Return to the BIG-IP UI and navigate to **Security -> Application Security -> URLs -> Allowed URLs** .
 
 #.  Our WAF is currently set to allow **any** URL as represented by the wildcard entries.
+
+    |lab1-3|
 
 #.  We can verify the WAF is seeing the traffic by navigating to **Security -> Event Logs -> Application -> Requests** and inspecting the entries.
 
     |lab1-4|
 
-#.  Don't forget to clear the "Illegal Requests" filter!
+#.  Don't forget to clear the "Illegal Requests" filter, so that legal requests will be displayed!
 
     |lab1-5|
 

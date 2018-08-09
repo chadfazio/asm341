@@ -269,7 +269,7 @@
 </li>
 <li><p class="first">Create a new ASM policy by navigating to <strong>Security -&gt; Application Security -&gt; Security Policies</strong>.</p>
 </li>
-<li><p class="first">Click <strong>Create New Policy</strong> and fill in the page as follows, then click <strong>Create policy</strong>.</p>
+<li><p class="first">Click <strong>Create New Policy</strong> and fill in the page as follows, using lab1 as the name, then click <strong>Create Policy</strong>.</p>
 <blockquote>
 <div><p><a class="reference internal" href="../../_images/lab1-1update.png"><img alt="lab1-1" src="../../_images/lab1-1update.png" style="width: 800px;" /></a></p>
 </div></blockquote>
@@ -307,17 +307,17 @@
 <ol class="arabic">
 <li><p class="first">Open a new firefox tab and login to <code class="docutils literal notranslate"><span class="pre">http://10.1.10.145/WebGoat</span></code> (credentials are f5student / password).</p>
 </li>
-<li><p class="first">Explore around the app.  Notice as you click between (for instance) <strong>Injection Flaws</strong>  and <strong>Authentication Flaws</strong>  that the URL changes to correspond to the page.  We can use this information to build policy in our WAF.</p>
+<li><p class="first">Explore around the app.  Notice as you click between (for instance) <strong>Injection Flaws</strong>  and <strong>Authentication Flaws</strong>  that the URL changes to correspond to the page.  We can use this information to build our ASM policy.</p>
 </li>
-<li><p class="first">Return to the BIG-IP UI and navigate to <strong>Security -&gt; Application Security -&gt; URLs -&gt; Allowed URLs</strong></p>
-<p><a class="reference internal" href="../../_images/lab1-3.png"><img alt="lab1-3" src="../../_images/lab1-3.png" style="width: 800px;" /></a></p>
+<li><p class="first">Return to the BIG-IP UI and navigate to <strong>Security -&gt; Application Security -&gt; URLs -&gt; Allowed URLs</strong> .</p>
 </li>
 <li><p class="first">Our WAF is currently set to allow <strong>any</strong> URL as represented by the wildcard entries.</p>
+<p><a class="reference internal" href="../../_images/lab1-3.png"><img alt="lab1-3" src="../../_images/lab1-3.png" style="width: 800px;" /></a></p>
 </li>
 <li><p class="first">We can verify the WAF is seeing the traffic by navigating to <strong>Security -&gt; Event Logs -&gt; Application -&gt; Requests</strong> and inspecting the entries.</p>
 <p><a class="reference internal" href="../../_images/lab1-4update.png"><img alt="lab1-4" src="../../_images/lab1-4update.png" style="width: 800px;" /></a></p>
 </li>
-<li><p class="first">Don’t forget to clear the “Illegal Requests” filter!</p>
+<li><p class="first">Don’t forget to clear the “Illegal Requests” filter, so that legal requests will be displayed!</p>
 <p><a class="reference internal" href="../../_images/lab1-5.png"><img alt="lab1-5" src="../../_images/lab1-5.png" style="width: 800px;" /></a></p>
 </li>
 </ol>
