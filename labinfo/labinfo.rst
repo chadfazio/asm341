@@ -1,5 +1,6 @@
 Lab Environment & Topology 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. |lab-diag| image:: images/Agility2018LabDiagram.png
 
 .. WARNING:: All work is done from the Linux client/jumphost (client01), which can be access via RDP (Windows Remote Desktop) or ssh. No installation or interaction with your local system is required.
 
@@ -45,7 +46,7 @@ components have been included in your lab environment:
 
 -  1 x Ubuntu Linux 18.04 client, with client tools installed - aptly named: client01
 -  1 x F5 BIG-IP VE (v13.1.0.5) running ASM and LTM - aptly named: bigip01
--  1 x Ubuntu Linux 18.04 serve, with webgoat 8 installed - aptly named: server01 
+-  1 x Ubuntu Linux 18.04 server, with webgoat 8 installed - aptly named: server01 
 
 .. nwdiag:: labtopology.diag
    :width: 800
@@ -88,7 +89,7 @@ components:
 
 A graphical representation of the lab:
 
-.. image:: images/Agility2018LabDiagram.png
+	|lab-diag|
 
 |
 
