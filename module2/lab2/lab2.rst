@@ -12,7 +12,7 @@ Lab 2.2: Session Hijacking Protection
 ..  |lab22-9| image:: images/lab22-9.png
 
 
-.. NOTE:: Items in this section depend on steps in prior sections, please ensure you've completed all sections in lab 2 up to this point before beginning this lab.
+.. note:: Items in this section depend on steps in prior sections, please ensure you've completed all sections in lab 2 up to this point before beginning this lab.
 
 
 Task 1 - Configure Session Hijacking Protection
@@ -20,13 +20,13 @@ Task 1 - Configure Session Hijacking Protection
 
 #.  Open the BIG-IP interface in **Firefox** and navigate to **Security -> Application Security -> Sessions and Logins -> Session Tracking**.
 
-#.  **Click** the checkbox to enable **Detect Session Hijacking by Device ID Tracking** and click **save**. Then, follow the link to **Learning and Blocking Settings**.
+#.  **Click** the checkbox to enable **Detect Session Hijacking by Device ID Tracking** and click **Save**. Then, follow the link to **Learning and Blocking Settings**.
 
     |lab22-1|
 
 #.  Change the enforcement mode to **Blocking**.
 
-#.  Expand the **Sessions and Logins** section and select **alarm** and **block**, then click **save**.
+#.  Expand the **Sessions and Logins** section and select **alarm** and **block**, then click **Save**.
 
 #.  Click **Apply Policy** then click **OK**.
 
@@ -44,7 +44,7 @@ Task 2 - Test Session Hijacking Protection
 
 #.  Open a Linux terminal and run ``BurpSuiteCommunity &``.  Accept the defaults and click through to the main window.
 
-#.  Go to the proxy tab and disable intercept so background requests from chrome don't get hung up.
+#.  Go to the proxy tab and disable intercept so background requests from Chrome don't get hung up.
 
 #.  Run ``google-chrome-stable --incognito --proxy-server="http://127.0.0.1:8080"`` in the same or a different terminal.
 
@@ -66,7 +66,7 @@ Task 2 - Test Session Hijacking Protection
 
 #.  Go back to Chrome and refresh the WebGoat login page 12 times to generate some traffic.
 
-#.  Go back to burp and re-enable intercept
+#.  Go back to burp and re-enable intercept.
 
 #.  Go back to Chrome and go to ``http://10.1.10.145/WebGoat/start.mvc#lesson/WebGoatIntroduction.lesson`` (avoid copying and pasting as you'll loose your cookie data).
 
@@ -92,11 +92,11 @@ Task 2 - Test Session Hijacking Protection
 
     |lab22-6| |lab22-7|
 
-#.  Compare the device IDs in this request vs the illegal request we just looked at.  They should be different:
+#.  Compare the device IDs in this request vs the illegal request we just looked at. They should be different:
 
     |lab22-8|
 
-    .. NOTE:: The Device ID is essentially a fingerprint computed from a number of different browser and system attributes.  They are unique identifiers that do not depend on browser session data.  ASM uses these computed values to uniquely identify clients and tie them to user and session data.  In this exercise we triggered an ASM Cooking Hijacking violation by replacing the cookies in the HTTP request with those of an existing valid session.  ASM was able to detect this because the cookie data did not match the Device ID of the new browser.
+    .. note:: The Device ID is essentially a fingerprint computed from a number of different browser and system attributes. They are unique identifiers that do not depend on browser session data. ASM uses these computed values to uniquely identify clients and tie them to user and session data. In this exercise we triggered an ASM Cooking Hijacking violation by replacing the cookies in the HTTP request with those of an existing valid session. ASM was able to detect this because the cookie data did not match the Device ID of the new browser.
 
 #.  If this were a production configuration, we would likely enable the blocking settings back on the **Session Tracking** page so that these attacks would not be allowed to continue, but for the purposes of maintaining access to the lab environment we've elected not to do so.  Feel free to circle back and explore these options at the end of the lab:
 
