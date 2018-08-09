@@ -30,7 +30,7 @@ In this lab we will investigate some of the features that comprise F5's Advanced
 Task 1 - Configuring Bot Defense
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-#. Browse to the BIGIP managemnet console.
+#. Browse to the BIGIP management console.
 
 #. Create a New ASM policy by navigating to **Security -> Application Security -> Security Policies**.
 
