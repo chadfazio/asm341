@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<head>
+  
+  <!--STAGING:-->
+  <script src="https://assets.adobedtm.com/50164577268f481934e5d57dbfb78f929164cd0d/satelliteLib-ea775cfabef5fca8b04e9392f20c986c0724a7c3-staging.js"></script>
+  <!--Production:-->
+  <script src="https://assets.adobedtm.com/50164577268f481934e5d57dbfb78f929164cd0d/satelliteLib-ea775cfabef5fca8b04e9392f20c986c0724a7c3.js"></script>
+    <title>Lab 1.1: Allowed URL List</title>
+  
+
+  <meta charset="utf-8">
+  <!-- Twitter Bootstrap viewport setting -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!-- F5 metadata -->
+  <meta name="kb_doc_type" content="Manual"/>
+  <meta name="kb_doc_type" content="User Guide"/>
+  <meta name="title" content="Lab 1.1: Allowed URL List"/>
+  <meta name="product" content="Agility 2018 ASM 341"/>
+  <meta name="version" content="1.0"/>
+  <meta name="updated_date"  content="None"/>
+  <meta name="archived" content="Archived documents excluded"/>
+
+  
+  
+  
+  <link href="https://cdn.f5.com/favicon.ico" rel="icon">
+ 
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script type="text"> jQuery.noConflict(true)</script>
+
+</head>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Lab 1.1: Allowed URL List &#8212; Agility 2018 ASM 341 1.0 documentation</title>
+    <link rel="stylesheet" href="../../_static/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/css/f5.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/css/f5-theme.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/css/custom.css" type="text/css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/21fb8a09c3.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Lab 1.2: Allowed (and disallowed…) HTTP Request Methods" href="../lab2/lab2.html" />
+    <link rel="prev" title="Module 1: Positive Security" href="../module1.html" />
+  </head><body>
+  <div id="clouddocs-header"></div>
+
+    <div id="dismiss">
+      <button type="button" class="btn btn-info navbar-btn site-hidden"><i class="fa fa-align-justify"></i></button>
+    </div>
+    <div id="sidebar" class="section-nav">
+      <nav class="nav-sidebartoc">
+        <h5>Agility 2018 ASM 341 1.0 documentation 1.0</h5>
+<div id="searchbox" role="search">
+  <form class="search" action="../../search.html" method="get">
+    <input type="text" class="search" name="q" placeholder=" Search..." />
+    <button type="submit" class="btn btn-info navbar-btn"><i class="fa fa-search"></i></button>
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        <hr>
+        <h5>Current Page</h5>
+        <span class="nav-sidebartoc">
+            <ul>
+<li><a class="reference internal" href="#">Lab 1.1: Allowed URL List</a><ul>
+<li><a class="reference internal" href="#task-1-create-a-security-policy-and-enable-logging">Task 1 - Create a Security Policy and Enable Logging</a></li>
+<li><a class="reference internal" href="#task-2-examine-the-allowed-urls-list">Task 2 - Examine the Allowed URLs list</a></li>
+<li><a class="reference internal" href="#task-3-modify-the-allowed-urls-list">Task 3 - Modify the Allowed URLs List</a></li>
+<li><a class="reference internal" href="#task-4-create-explicit-allowed-urls">Task 4 - Create Explicit Allowed URLs</a></li>
+<li><a class="reference internal" href="#task-5-automating-allowed-url-list">Task 5 - Automating Allowed URL list</a></li>
+<li><a class="reference internal" href="#task-6-lab-cleanup">Task 6 - Lab Cleanup</a></li>
+</ul>
+</li>
+</ul>
+
+         </span>
+        <hr>
+        <h5>Site Contents</h5>
+        <span class="nav-sidebartoc">
+            <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../intro.html">Welcome to Agility Labs 2018!</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../labinfo/labinfo.html">Lab Topology &amp; Tools</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../module1.html">Module 1: Positive Security</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Lab 1.1: Allowed URL List</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../lab2/lab2.html">Lab 1.2: Allowed (and disallowed…) HTTP Request Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../lab3/lab3.html">Lab 1.3: Blocking Mode Override</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../lab4/lab4.html">Lab 1.4: Protection from Parameter Exploits</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../module2/module2.html">Module 2: Beyond Signatures and Positive Security</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../module3/module3.html">Module 3: Advanced WAF</a></li>
+</ul>
+
+        </span><!-- Use this file to add extra links to the bottom of the ToC sidebar -->
+<hr>
+  <span class="nav-sidebartoc">
+ <!-- insert content here -->
+  </span>
+      </nav>
+    </div>
+
+  
+  <div class="main active" id="content">
+    <article class="docs-container site-article-inner">
+            <nav class="site-breadcrumb-nav site-nav">
+          <ul class="site-breadcrumb-list">
+            <li class="breadcrumb-item"><button type="button" id="sidebarCollapse" class="btn btn-info navbar-btn site-hidden"><i class="fa fa-align-justify"></i></button>&#x20 <a href="/">Agility 2018</a> &gt; <a href="../../index.html">Agility 2018 ASM 341 </a> &gt; Lab 1.1: Allowed URL List</li>
+          </ul>
+      </nav>
+      
+      
+
+    
+  <div class="section" id="lab-1-1-allowed-url-list">
+<h1>Lab 1.1: Allowed URL List<a class="headerlink" href="#lab-1-1-allowed-url-list" title="Permalink to this headline">¶</a></h1>
+<p>Task 1 - Create a Security Policy and Enable Logging</p>
+<div class="section" id="task-1-create-a-security-policy-and-enable-logging">
+<h2>Task 1 - Create a Security Policy and Enable Logging<a class="headerlink" href="#task-1-create-a-security-policy-and-enable-logging" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Browse to the BIGIP management console by opening FireFox and clicking on the <strong>bigip01</strong> shortcut.</li>
+<li>Login with the credentials username: <strong>f5student</strong> and the password: <strong>f5DEMOs4u!</strong></li>
+<li>Create a new ASM policy by navigating to <strong>Security -&gt; Application Security -&gt; Security policies</strong>.</li>
+<li><dl class="first docutils">
+<dt>Click <strong>Create New Policy</strong> and fill in the page as follows, then click <strong>Create policy</strong></dt>
+<dd><img alt="lab1-1" src="../../_images/lab1-1update.png" /></dd>
+</dl>
+</li>
+<li>Navigate to <strong>Local Traffic -&gt; Virtual Servers</strong> and select the “asm_vs” virtual server.</li>
+<li><dl class="first docutils">
+<dt>Click the Security tab and select policies to view Policy settings.</dt>
+<dd><img alt="lab1-update" src="../../_images/lab1-update.png" /></dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Enable logging profiles then add the “Log All Requests” profile as shown below, and click <strong>update</strong></dt>
+<dd><img alt="lab1-2" src="../../_images/lab1-2.png" /></dd>
+</dl>
+</li>
+<li>Finally, lets configure this ASM policy to Alarm on “Illegal URLs”.  Navigate to <strong>Security -&gt; Application Security -&gt; Security Policies</strong>.</li>
+<li><dl class="first docutils">
+<dt>Click “View Learning and Blocking Settings”</dt>
+<dd><img alt="lab1-update2" src="../../_images/lab1-update2.png" /></dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Expand the “URLs” dropdown and check Alarm</dt>
+<dd><img alt="lab1-6" src="../../_images/lab1-6update.png" /></dd>
+</dl>
+</li>
+</ol>
+</div>
+<div class="section" id="task-2-examine-the-allowed-urls-list">
+<h2>Task 2 - Examine the Allowed URLs list<a class="headerlink" href="#task-2-examine-the-allowed-urls-list" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Open a new firefox tab and login to <code class="docutils literal notranslate"><span class="pre">http://10.1.10.145/WebGoat</span></code> (credentials are f5student / f5DEMOs4u!)</li>
+<li>Explore around the app.  Notice as you click between (for instance) <strong>Injection Flaws</strong>  and <strong>Authentication Flaws</strong>  that the URL changes to correspond to the page.  We can use this information to build policy in our WAF.</li>
+<li><dl class="first docutils">
+<dt>Return to the BIG-IP UI and navigate to <strong>Security -&gt; Application Security -&gt; URLs -&gt; Allowed URLs</strong></dt>
+<dd><img alt="lab1-3" src="../../_images/lab1-3.png" /></dd>
+</dl>
+</li>
+<li>Our WAF is currently set to allow <strong>any</strong> URL as represented by the wildcard entries.</li>
+<li><dl class="first docutils">
+<dt>We can verify the WAF is seeing the traffic by navigating to <strong>Security -&gt; Event Logs -&gt; Application -&gt; Requests</strong> and inspecting the entries.</dt>
+<dd><img alt="lab1-4" src="../../_images/lab1-4update.png" /></dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Don’t forget to clear the “Illegal Requests” filter!</dt>
+<dd><img alt="lab1-5" src="../../_images/lab1-5.png" /></dd>
+</dl>
+</li>
+</ol>
+</div>
+<div class="section" id="task-3-modify-the-allowed-urls-list">
+<h2>Task 3 - Modify the Allowed URLs List<a class="headerlink" href="#task-3-modify-the-allowed-urls-list" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Return to the Allowed URLs list.</li>
+<li><dl class="first docutils">
+<dt>Delete the HTTP and HTTPS Wildcard entries.</dt>
+<dd><img alt="lab1-7" src="../../_images/lab1-7update.png" /></dd>
+</dl>
+</li>
+<li>Click the <strong>Apply Policy</strong> button.</li>
+<li>Attempt to browse the test site <code class="docutils literal notranslate"><span class="pre">http://10.1.10.145/WebGoat</span></code> , what are your results?</li>
+<li><dl class="first docutils">
+<dt>We are still able to browse because our policy is not configured to block for Illegal URLs.  Return to the “View Learning and Blocking Settings” page.</dt>
+<dd><img alt="lab1-update2" src="../../_images/lab1-update2.png" /></dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Check the Block box for Illegal URLs.  Click <strong>Save</strong> followed by <strong>Apply Policy</strong></dt>
+<dd><img alt="lab1-update3" src="../../_images/lab1-update3.png" /></dd>
+</dl>
+</li>
+<li>Attempt to browse the test site <code class="docutils literal notranslate"><span class="pre">http://10.1.10.145/WebGoat</span></code> , what are your results?</li>
+<li><dl class="first docutils">
+<dt>Now lets add an Allowed URL.  Click the <strong>Create</strong> button and create an allowed URL with the following settings:</dt>
+<dd><img alt="lab1-8" src="../../_images/lab1-8.png" /></dd>
+</dl>
+</li>
+<li>Click <strong>Apply Policy</strong>.</li>
+<li>Test site again, are you able to browse?</li>
+</ol>
+</div>
+<div class="section" id="task-4-create-explicit-allowed-urls">
+<h2>Task 4 - Create Explicit Allowed URLs<a class="headerlink" href="#task-4-create-explicit-allowed-urls" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Now that we’ve seen how wildcard URLs work, let’s get the site to work with explict URLs.</li>
+<li>Delete the Wildcard URL /WebGoat/</li>
+<li>Click <strong>Apply Policy</strong></li>
+<li>Create explict URLs to allow access to <strong>only</strong> the login page, landing page, and Insecure Login Page.</li>
+<li><dl class="first docutils">
+<dt>Hint: use the information in the Illegal Requests log to build explicit and wildcard URLs to fully render pages.</dt>
+<dd><img alt="lab1-task4" src="../../_images/lab1-task4.png" /></dd>
+</dl>
+</li>
+</ol>
+</div>
+<div class="section" id="task-5-automating-allowed-url-list">
+<h2>Task 5 - Automating Allowed URL list<a class="headerlink" href="#task-5-automating-allowed-url-list" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="task-6-lab-cleanup">
+<h2>Task 6 - Lab Cleanup<a class="headerlink" href="#task-6-lab-cleanup" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Return to View Learning and Blocking Settings” page</li>
+<li>Uncheck Alarm and Block for Illegal URLs.</li>
+<li><dl class="first docutils">
+<dt>Click <strong>Save</strong> and <strong>Apply Policy</strong></dt>
+<dd><img alt="lab1-task5" src="../../_images/lab1-task5.png" /></dd>
+</dl>
+</li>
+</ol>
+</div>
+</div>
+
+
+
+    
+     <div class="row next-prev-btn-row">
+       <div class="col-lg-12">
+       
+        <a href="../module1.html" title="Module 1: Positive Security" accesskey="p" class="btn btn-primary pull-left"><i class="fa fa-arrow-circle-left" aria-hidden="true"></i> Previous</a>
+       
+       
+          <a href="../lab2/lab2.html" title="Lab 1.2: Allowed (and disallowed…) HTTP Request Methods" accesskey="n" class="btn btn-primary pull-right">Next <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></a>
+       
+     </div>
+     </div>
+    
+
+    </article>
+  </div>
+
+</div>
+
+
+  <div id="clouddocs-footer"></div>
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="../../_static/js/bootstrap.min.js"></script>
+  <script type="text/javascript">
+    jQuery.noConflict(true)
+  </script>
+  <script src="../../_static/js/clouddocs.js"></script>
+  </body>
+</html>

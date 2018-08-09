@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<head>
+  
+  <!--STAGING:-->
+  <script src="https://assets.adobedtm.com/50164577268f481934e5d57dbfb78f929164cd0d/satelliteLib-ea775cfabef5fca8b04e9392f20c986c0724a7c3-staging.js"></script>
+  <!--Production:-->
+  <script src="https://assets.adobedtm.com/50164577268f481934e5d57dbfb78f929164cd0d/satelliteLib-ea775cfabef5fca8b04e9392f20c986c0724a7c3.js"></script>
+    <title>Lab 2.1: User Session Tracking</title>
+  
+
+  <meta charset="utf-8">
+  <!-- Twitter Bootstrap viewport setting -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!-- F5 metadata -->
+  <meta name="kb_doc_type" content="Manual"/>
+  <meta name="kb_doc_type" content="User Guide"/>
+  <meta name="title" content="Lab 2.1: User Session Tracking"/>
+  <meta name="product" content="Agility 2018 ASM 341"/>
+  <meta name="version" content="1.0"/>
+  <meta name="updated_date"  content="None"/>
+  <meta name="archived" content="Archived documents excluded"/>
+
+  
+  
+  
+  <link href="https://cdn.f5.com/favicon.ico" rel="icon">
+ 
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script type="text"> jQuery.noConflict(true)</script>
+
+</head>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Lab 2.1: User Session Tracking &#8212; Agility 2018 ASM 341 1.0 documentation</title>
+    <link rel="stylesheet" href="../../_static/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/css/f5.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/css/f5-theme.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/css/custom.css" type="text/css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/21fb8a09c3.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Lab 2.2: Session Hijacking Protection" href="../lab2/lab2.html" />
+    <link rel="prev" title="Module 2: Beyond Signatures and Positive Security" href="../module2.html" />
+  </head><body>
+  <div id="clouddocs-header"></div>
+
+    <div id="dismiss">
+      <button type="button" class="btn btn-info navbar-btn site-hidden"><i class="fa fa-align-justify"></i></button>
+    </div>
+    <div id="sidebar" class="section-nav">
+      <nav class="nav-sidebartoc">
+        <h5>Agility 2018 ASM 341 1.0 documentation 1.0</h5>
+<div id="searchbox" role="search">
+  <form class="search" action="../../search.html" method="get">
+    <input type="text" class="search" name="q" placeholder=" Search..." />
+    <button type="submit" class="btn btn-info navbar-btn"><i class="fa fa-search"></i></button>
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        <hr>
+        <h5>Current Page</h5>
+        <span class="nav-sidebartoc">
+            <ul>
+<li><a class="reference internal" href="#">Lab 2.1: User Session Tracking</a><ul>
+<li><a class="reference internal" href="#task-1-create-a-security-policy-and-enable-logging">Task 1: Create a Security Policy and Enable Logging</a></li>
+<li><a class="reference internal" href="#task-2-define-login-logout-pages">Task 2: Define Login &amp; Logout Pages</a></li>
+<li><a class="reference internal" href="#task-3-enable-session-tracking">Task 3: Enable Session Tracking</a></li>
+<li><a class="reference internal" href="#task-4-test-session-tracking">Task 4: Test Session Tracking</a></li>
+</ul>
+</li>
+</ul>
+
+         </span>
+        <hr>
+        <h5>Site Contents</h5>
+        <span class="nav-sidebartoc">
+            <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../intro.html">Welcome to Agility Labs 2018!</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../labinfo/labinfo.html">Lab Topology &amp; Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../module1/module1.html">Module 1: Positive Security</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../module2.html">Module 2: Beyond Signatures and Positive Security</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Lab 2.1: User Session Tracking</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../lab2/lab2.html">Lab 2.2: Session Hijacking Protection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../lab3/lab3.html">Lab 2.3: Credential Stuffing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../lab4/lab4.html">Lab 2.4: Data Guard</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../lab5/lab5.html">Lab 2.5: DAST Integration</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../module3/module3.html">Module 3: Advanced WAF</a></li>
+</ul>
+
+        </span><!-- Use this file to add extra links to the bottom of the ToC sidebar -->
+<hr>
+  <span class="nav-sidebartoc">
+ <!-- insert content here -->
+  </span>
+      </nav>
+    </div>
+
+  
+  <div class="main active" id="content">
+    <article class="docs-container site-article-inner">
+            <nav class="site-breadcrumb-nav site-nav">
+          <ul class="site-breadcrumb-list">
+            <li class="breadcrumb-item"><button type="button" id="sidebarCollapse" class="btn btn-info navbar-btn site-hidden"><i class="fa fa-align-justify"></i></button>&#x20 <a href="/">Agility 2018</a> &gt; <a href="../../index.html">Agility 2018 ASM 341 </a> &gt; Lab 2.1: User Session Tracking</li>
+          </ul>
+      </nav>
+      
+      
+
+    
+  <div class="section" id="lab-2-1-user-session-tracking">
+<h1>Lab 2.1: User Session Tracking<a class="headerlink" href="#lab-2-1-user-session-tracking" title="Permalink to this headline">¶</a></h1>
+<p>In this exercise we’ll explore the session tracking capabilities present in BIG-IP ASM.  BIG-IP ASM not only has the capability to gather user identity details from login pages and APM, but can also generate a unique device-id for each connected client.  We’ll explore both below.</p>
+<div class="section" id="task-1-create-a-security-policy-and-enable-logging">
+<h2>Task 1: Create a Security Policy and Enable Logging<a class="headerlink" href="#task-1-create-a-security-policy-and-enable-logging" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic">
+<li><p class="first">Open your browser of choice and navigate to the BIG-IP management interface.  For the purposes of this lab you can find it at <code class="docutils literal notranslate"><span class="pre">https://10.1.1.245/</span></code> or by clicking on the <strong>bigip</strong> shortcut in Firefox.</p>
+</li>
+<li><p class="first">Login to the BIG-IP with the username: <strong>f5student</strong> and the password <strong>f5DEMOs4u!</strong></p>
+</li>
+<li><p class="first">Create a new ASM policy by navigating to <strong>Security -&gt; Application Security -&gt; Security policies</strong>.</p>
+</li>
+<li><p class="first">Click <strong>Create New Policy</strong>, fill in the page as follows, and then click <strong>create policy</strong> as shown below.</p>
+<blockquote>
+<div><p><img alt="lab21-1" src="../../_images/lab21-1.png" /></p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">If the virtual server doesn’t appear in the dropdown list, ensure that it has an HTTP profile assigned.</p>
+</div>
+</div></blockquote>
+</li>
+<li><p class="first">Navigate to <strong>Local Traffic -&gt; Virtual Servers -&gt; asm_vs -&gt; Security -&gt; Policies</strong>.</p>
+</li>
+<li><p class="first"><strong>Enable</strong> logging profiles then add the <strong>“Log All Requests”</strong> profile as shown below, and click <strong>update</strong>.</p>
+<blockquote>
+<div><p><img alt="lab21-2" src="../../_images/lab21-2.png" /></p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">While you’re here it’s a good idea to confirm that the Lab2 security policy is also enabled.</p>
+</div>
+</div></blockquote>
+</li>
+</ol>
+</div>
+<div class="section" id="task-2-define-login-logout-pages">
+<h2>Task 2: Define Login &amp; Logout Pages<a class="headerlink" href="#task-2-define-login-logout-pages" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic">
+<li><p class="first">To configure a login page, go to <strong>Security -&gt; Application Security -&gt; Sessions and Logins -&gt; Login Pages List</strong> and click <strong>Create</strong>.</p>
+</li>
+<li><p class="first">We’ll now populate the form with data gathered from your favorite browser or reconnaissance tool.  For expedience, we’ve gathered the appropriate data for you in advance:</p>
+<blockquote>
+<div><p><img alt="lab21-3" src="../../_images/lab21-3.png" /></p>
+</div></blockquote>
+</li>
+<li><p class="first">Populate the form as shown below and click <strong>Create</strong>:</p>
+<blockquote>
+<div><p><img alt="lab21-4" src="../../_images/lab21-4.png" /></p>
+</div></blockquote>
+</li>
+<li><p class="first">From the tab bar select <strong>Logout Pages List</strong> or navigate to <strong>Security -&gt; Application Security -&gt; Sessions and Logins -&gt; Logout Pages List</strong></p>
+</li>
+<li><p class="first">Populate the form as shown below and click <strong>Create</strong>.</p>
+<blockquote>
+<div><p><img alt="lab21-5" src="../../_images/lab21-5.png" /></p>
+</div></blockquote>
+</li>
+</ol>
+</div>
+<div class="section" id="task-3-enable-session-tracking">
+<h2>Task 3: Enable Session Tracking<a class="headerlink" href="#task-3-enable-session-tracking" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Navigate to <strong>Security -&gt; Application Security -&gt; Sessions and Logins -&gt; Session Tracking</strong></li>
+<li>Check <strong>Session Awareness</strong> and ensure <strong>Use All Login Pages</strong> is selected in the drop-down below it.</li>
+<li>Ensure <strong>Track Violations and perform Actions</strong> is also enabled, then click <strong>Save</strong>.</li>
+<li>Click <strong>Apply Policy</strong> in the upper right hand corner of the inner frame, then click <strong>OK</strong>.</li>
+</ol>
+</div>
+<div class="section" id="task-4-test-session-tracking">
+<h2>Task 4: Test Session Tracking<a class="headerlink" href="#task-4-test-session-tracking" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic">
+<li><p class="first">Navigate to <strong>Security -&gt; Event Logs -&gt; Application -&gt; Requests</strong> and click the <strong>X</strong> in the filter bar to clear the <strong>Illegal Requests</strong> filter.</p>
+</li>
+<li><p class="first">Click on the select all <strong>checkbox</strong> to the far left of the filter bar then <strong>Delete Requests</strong> or if given the option <strong>Delete all Requests</strong>.  This will make it easier to review the logs from the next step.</p>
+</li>
+<li><p class="first">Open a private browsing window and navigate to <code class="docutils literal notranslate"><span class="pre">http://10.1.10.145/WebGoat/login</span></code>, then login to the WebGoat app with the credentials <strong>f5student</strong> / <strong>f5DEMOs4u!</strong></p>
+</li>
+<li><p class="first">Return to the BIG-IP interface.</p>
+</li>
+<li><p class="first">Deselect the <strong>checkbox</strong> and click the <strong>refresh</strong> button.</p>
+</li>
+<li><p class="first">Click on the most recent log entry.  You should now see that the username that submitted the request is clearly identified in the log.</p>
+<blockquote>
+<div><p><img alt="lab21-6" src="../../_images/lab21-6.png" /></p>
+</div></blockquote>
+</li>
+<li><p class="first">Click the drop-down next to the username field and you should be given 3 options.  <strong>Enable</strong> “Log All Requests” and click <strong>change</strong>.</p>
+<blockquote>
+<div><p><img alt="lab21-7" src="../../_images/lab21-7.png" /></p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Since we are already logging all requests, this will not affect the logging per say, but will allow us to demonstrate the associated reporting features in ASM without blocking access to our lab client.</p>
+</div>
+</div></blockquote>
+</li>
+<li><p class="first">Navigate to <strong>Reporting -&gt; Application -&gt; Session Tracking Status</strong>.  You should now see that the user f5student appears in the tracking list.  If you were to click “View Requests” you would be taken to only the requests made by that user.  You may also use this page to release the user from Session Tracking.  These features are useful for forensic purposes as well as blocking access to applications by Device-ID, Username, etc.</p>
+</li>
+<li><p class="first">Finally, <strong>select</strong> the f5student entry in the list and click <strong>release</strong>, then close the private browsing window.</p>
+<p><strong>This concludes Section 2.1</strong></p>
+</li>
+</ol>
+</div>
+</div>
+
+
+
+    
+     <div class="row next-prev-btn-row">
+       <div class="col-lg-12">
+       
+        <a href="../module2.html" title="Module 2: Beyond Signatures and Positive Security" accesskey="p" class="btn btn-primary pull-left"><i class="fa fa-arrow-circle-left" aria-hidden="true"></i> Previous</a>
+       
+       
+          <a href="../lab2/lab2.html" title="Lab 2.2: Session Hijacking Protection" accesskey="n" class="btn btn-primary pull-right">Next <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></a>
+       
+     </div>
+     </div>
+    
+
+    </article>
+  </div>
+
+</div>
+
+
+  <div id="clouddocs-footer"></div>
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="../../_static/js/bootstrap.min.js"></script>
+  <script type="text/javascript">
+    jQuery.noConflict(true)
+  </script>
+  <script src="../../_static/js/clouddocs.js"></script>
+  </body>
+</html>

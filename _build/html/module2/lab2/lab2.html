@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<head>
+  
+  <!--STAGING:-->
+  <script src="https://assets.adobedtm.com/50164577268f481934e5d57dbfb78f929164cd0d/satelliteLib-ea775cfabef5fca8b04e9392f20c986c0724a7c3-staging.js"></script>
+  <!--Production:-->
+  <script src="https://assets.adobedtm.com/50164577268f481934e5d57dbfb78f929164cd0d/satelliteLib-ea775cfabef5fca8b04e9392f20c986c0724a7c3.js"></script>
+    <title>Lab 2.2: Session Hijacking Protection</title>
+  
+
+  <meta charset="utf-8">
+  <!-- Twitter Bootstrap viewport setting -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!-- F5 metadata -->
+  <meta name="kb_doc_type" content="Manual"/>
+  <meta name="kb_doc_type" content="User Guide"/>
+  <meta name="title" content="Lab 2.2: Session Hijacking Protection"/>
+  <meta name="product" content="Agility 2018 ASM 341"/>
+  <meta name="version" content="1.0"/>
+  <meta name="updated_date"  content="None"/>
+  <meta name="archived" content="Archived documents excluded"/>
+
+  
+  
+  
+  <link href="https://cdn.f5.com/favicon.ico" rel="icon">
+ 
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script type="text"> jQuery.noConflict(true)</script>
+
+</head>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Lab 2.2: Session Hijacking Protection &#8212; Agility 2018 ASM 341 1.0 documentation</title>
+    <link rel="stylesheet" href="../../_static/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/css/f5.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/css/f5-theme.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/css/custom.css" type="text/css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/21fb8a09c3.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Lab 2.3: Credential Stuffing" href="../lab3/lab3.html" />
+    <link rel="prev" title="Lab 2.1: User Session Tracking" href="../lab1/lab1.html" />
+  </head><body>
+  <div id="clouddocs-header"></div>
+
+    <div id="dismiss">
+      <button type="button" class="btn btn-info navbar-btn site-hidden"><i class="fa fa-align-justify"></i></button>
+    </div>
+    <div id="sidebar" class="section-nav">
+      <nav class="nav-sidebartoc">
+        <h5>Agility 2018 ASM 341 1.0 documentation 1.0</h5>
+<div id="searchbox" role="search">
+  <form class="search" action="../../search.html" method="get">
+    <input type="text" class="search" name="q" placeholder=" Search..." />
+    <button type="submit" class="btn btn-info navbar-btn"><i class="fa fa-search"></i></button>
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        <hr>
+        <h5>Current Page</h5>
+        <span class="nav-sidebartoc">
+            <ul>
+<li><a class="reference internal" href="#">Lab 2.2: Session Hijacking Protection</a><ul>
+<li><a class="reference internal" href="#task-1-configure-session-hijacking-protection">Task 1 - Configure Session Hijacking Protection</a></li>
+<li><a class="reference internal" href="#task-2-test-session-hijacking-protection">Task 2 - Test Session Hijacking Protection</a></li>
+</ul>
+</li>
+</ul>
+
+         </span>
+        <hr>
+        <h5>Site Contents</h5>
+        <span class="nav-sidebartoc">
+            <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../intro.html">Welcome to Agility Labs 2018!</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../labinfo/labinfo.html">Lab Topology &amp; Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../module1/module1.html">Module 1: Positive Security</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../module2.html">Module 2: Beyond Signatures and Positive Security</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../lab1/lab1.html">Lab 2.1: User Session Tracking</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Lab 2.2: Session Hijacking Protection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../lab3/lab3.html">Lab 2.3: Credential Stuffing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../lab4/lab4.html">Lab 2.4: Data Guard</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../lab5/lab5.html">Lab 2.5: DAST Integration</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../module3/module3.html">Module 3: Advanced WAF</a></li>
+</ul>
+
+        </span><!-- Use this file to add extra links to the bottom of the ToC sidebar -->
+<hr>
+  <span class="nav-sidebartoc">
+ <!-- insert content here -->
+  </span>
+      </nav>
+    </div>
+
+  
+  <div class="main active" id="content">
+    <article class="docs-container site-article-inner">
+            <nav class="site-breadcrumb-nav site-nav">
+          <ul class="site-breadcrumb-list">
+            <li class="breadcrumb-item"><button type="button" id="sidebarCollapse" class="btn btn-info navbar-btn site-hidden"><i class="fa fa-align-justify"></i></button>&#x20 <a href="/">Agility 2018</a> &gt; <a href="../../index.html">Agility 2018 ASM 341 </a> &gt; Lab 2.2: Session Hijacking Protection</li>
+          </ul>
+      </nav>
+      
+      
+
+    
+  <div class="section" id="lab-2-2-session-hijacking-protection">
+<h1>Lab 2.2: Session Hijacking Protection<a class="headerlink" href="#lab-2-2-session-hijacking-protection" title="Permalink to this headline">¶</a></h1>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Items in this section depend on steps in prior sections, please ensure you’ve completed all sections in lab 2 up to this point before beginning this lab.</p>
+</div>
+<div class="section" id="task-1-configure-session-hijacking-protection">
+<h2>Task 1 - Configure Session Hijacking Protection<a class="headerlink" href="#task-1-configure-session-hijacking-protection" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic">
+<li><p class="first">Open the BIG-IP interface in <strong>Firefox</strong> and navigate to <strong>Security -&gt; Application Security -&gt; Sessions and Logins -&gt; Session Tracking</strong>.</p>
+</li>
+<li><p class="first"><strong>Click</strong> the checkbox to enable <strong>Detect Session Hijacking by Device ID Tracking</strong> and click <strong>save</strong>. Then, follow the link to <strong>Learning and Blocking Settings</strong>.</p>
+<p><img alt="lab22-1" src="../../_images/lab22-1.png" /></p>
+</li>
+<li><p class="first">Change the enforcement mode to <strong>Blocking</strong>.</p>
+</li>
+<li><p class="first">Expand the <strong>Sessions and Logins</strong> section and select <strong>alarm</strong> and <strong>block</strong>, then click <strong>save</strong>.</p>
+</li>
+<li><p class="first">Click <strong>Apply Policy</strong> then click <strong>OK</strong>.</p>
+</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><strong>Session Hijacking protection is now enabled.</strong></div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+</div>
+</div>
+<div class="section" id="task-2-test-session-hijacking-protection">
+<h2>Task 2 - Test Session Hijacking Protection<a class="headerlink" href="#task-2-test-session-hijacking-protection" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic">
+<li><p class="first">Open a Linux terminal and run <code class="docutils literal notranslate"><span class="pre">BurpSuiteCommunity</span> <span class="pre">&amp;</span></code>.  Accept the defaults and click through to the main window.</p>
+</li>
+<li><p class="first">Go to the proxy tab and disable intercept so background requests from chrome don’t get hung up.</p>
+</li>
+<li><p class="first">Run <code class="docutils literal notranslate"><span class="pre">google-chrome-stable</span> <span class="pre">--incognito</span> <span class="pre">--proxy-server=&quot;http://127.0.0.1:8080&quot;</span></code> in the same or a different terminal.</p>
+</li>
+<li><p class="first">Open the WebGoat login page (<code class="docutils literal notranslate"><span class="pre">http://10.1.10.145/WebGoat/login</span></code>) in <strong>Chrome</strong> but do not log in.</p>
+</li>
+<li><p class="first">Open a new private browsing window in <strong>Firefox</strong>, then type <code class="docutils literal notranslate"><span class="pre">ctrl+shift+i</span></code> to open inspector, and click the network tab.</p>
+</li>
+<li><p class="first">Navigate to WebGoat (in <strong>Firefox</strong>) at <code class="docutils literal notranslate"><span class="pre">http://10.1.10.145/WebGoat/login</span></code> and refresh the page 12 times.</p>
+</li>
+<li><p class="first">Login to WebGoat (in <strong>Firefox</strong>).</p>
+</li>
+<li><p class="first">Find the 200 request for <code class="docutils literal notranslate"><span class="pre">start.mvc</span></code> in the network debugging window and click on it. It should look like this:</p>
+<p><img alt="lab22-2" src="../../_images/lab22-2.png" /></p>
+<p>The request and response headers should then appear to the right.</p>
+</li>
+<li><p class="first">Click <strong>Raw headers</strong>, highlight the entire <code class="docutils literal notranslate"><span class="pre">Cookies:</span></code> and <code class="docutils literal notranslate"><span class="pre">DNT:</span></code> sections and copy them to the clipboard.</p>
+</li>
+<li><p class="first">Go back to Chrome and refresh the WebGoat login page 12 times to generate some traffic.</p>
+</li>
+<li><p class="first">Go back to burp and re-enable intercept</p>
+</li>
+<li><p class="first">Go back to Chrome and go to <code class="docutils literal notranslate"><span class="pre">http://10.1.10.145/WebGoat/start.mvc#lesson/WebGoatIntroduction.lesson</span></code> (avoid copying and pasting as you’ll loose your cookie data).</p>
+</li>
+<li><p class="first">Go back to burp and quickly <strong>replace</strong> the <strong>cookie</strong> and <strong>DNT</strong> headers in the dialog with the one in your clipboard, then click <strong>Forward</strong> several times until the button turns grey.</p>
+<p><img alt="lab22-9" src="../../_images/lab22-9.png" /></p>
+</li>
+<li><p class="first">Disable intercept in burp.</p>
+</li>
+<li><p class="first">Click refresh in <strong>Chrome</strong> if necessary (sometimes more than one is required).  You should get an ASM block page.</p>
+</li>
+<li><p class="first">Return to the BIG-IP and navigate back to <strong>Security -&gt; Event Logs -&gt; Application -&gt; Requests</strong>.  You should see one or more illegal requests.</p>
+</li>
+<li><p class="first">Click on the most recent illegal request, click <strong>all details</strong> and make note of the attributes (particularly the DeviceID):</p>
+<p><img alt="lab22-3" src="../../_images/lab22-3.png" /></p>
+</li>
+<li><p class="first">If you click on <strong>ASM Cookie Hijacking</strong> you should also see the following explanation:</p>
+<p><img alt="lab22-4" src="../../_images/lab22-4.png" /></p>
+</li>
+<li><p class="first">Now click the <strong>magnifying glass</strong> in the upper left corner of the log frame and use the <strong>search</strong> feature find a <strong>legal</strong> request from <code class="docutils literal notranslate"><span class="pre">f5student</span></code>.  ASM’s session tracking capabilities extend to search as well.</p>
+<p><img alt="lab22-6" src="../../_images/lab22-6.png" /> <img alt="lab22-7" src="../../_images/lab22-7.png" /></p>
+</li>
+<li><p class="first">Compare the device IDs in this request vs the illegal request we just looked at.  They should be different:</p>
+<p><img alt="lab22-8" src="../../_images/lab22-8.png" /></p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The Device ID is essentially a fingerprint computed from a number of different browser and system attributes.  They are unique identifiers that do not depend on browser session data.  ASM uses these computed values to uniquely identify clients and tie them to user and session data.  In this exercise we triggered an ASM Cooking Hijacking violation by replacing the cookies in the HTTP request with those of an existing valid session.  ASM was able to detect this because the cookie data did not match the Device ID of the new browser.</p>
+</div>
+</li>
+<li><p class="first">If this were a production configuration, we would likely enable the blocking settings back on the <strong>Session Tracking</strong> page so that these attacks would not be allowed to continue, but for the purposes of maintaining access to the lab environment we’ve elected not to do so.  Feel free to circle back and explore these options at the end of the lab:</p>
+<p><img alt="lab22-5" src="../../_images/lab22-5.png" /></p>
+</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+</div>
+<p><strong>This Concludes Section 2.2.</strong></p>
+</div>
+</div>
+
+
+
+    
+     <div class="row next-prev-btn-row">
+       <div class="col-lg-12">
+       
+        <a href="../lab1/lab1.html" title="Lab 2.1: User Session Tracking" accesskey="p" class="btn btn-primary pull-left"><i class="fa fa-arrow-circle-left" aria-hidden="true"></i> Previous</a>
+       
+       
+          <a href="../lab3/lab3.html" title="Lab 2.3: Credential Stuffing" accesskey="n" class="btn btn-primary pull-right">Next <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></a>
+       
+     </div>
+     </div>
+    
+
+    </article>
+  </div>
+
+</div>
+
+
+  <div id="clouddocs-footer"></div>
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="../../_static/js/bootstrap.min.js"></script>
+  <script type="text/javascript">
+    jQuery.noConflict(true)
+  </script>
+  <script src="../../_static/js/clouddocs.js"></script>
+  </body>
+</html>

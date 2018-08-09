@@ -1,14 +1,24 @@
 Welcome to Agility Labs 2018!
 -----------------------------	
 
-Introduction
-~~~~~~~~~~~~~
+Introduction to ASM 341 - High and Maximum Security
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Welcome to F5's Agility Labs, 2018 edition!  In this session we will continue the lessons started in the first two labs of the ASM series.  We will move beyond policies focusing on signature based protections and examine positive security models as well as some of the other advanced capabilties offered by F5's application firewall.  Configurations such as those in this lab will help you reach a maximum level of protection for your web applictions.
+Welcome to F5's Agility Labs, 2018 edition! This lab will focus on how to progress your application security to the limits of what F5's WAF, ASM, can offer.  We'll be using tools spanning both positive and negative security to show you how to best protect your application from today's threats.
 
-Succeeding with Application Security
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+The goal of this lab series is to help security administrators become familar with the tools and techniques available to protect a web application. This is final lab section deals with some of the more complicated means avaiable that should be implmeneted after the technques in ASM141 and ASM241 have already been explored.
 
+This series of ASM labs is based on:
 
+`Succeeding with Application Security <https://support.f5.com/csp/article/K07359270>`_
 
-https://support.f5.com/csp/article/K07359270
+Here is a complete listing of all ASM classes offered at this years agility.
+
+ASM141 - Good WAF Security - Getting started with ASM
+
+ASM241 - Elevated WAF Security - Elevating ASM Protection
+
+ASM341 - High and Maximum WAF Security - Maximizing ASM Protection
+
+ASM342 - WAF Programmability - Enhancing ASM Security and Manageability
+
