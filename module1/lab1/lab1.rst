@@ -78,16 +78,9 @@ Task 4 - Create Explicit Allowed URLs
 #.  Hint: use the information in the Illegal Requests log to build explicit and wildcard URLs to fully render pages.
         |lab1-task4|
 
-Task 5 - Automating Allowed URL list
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-
-
 
 Task 6 - Lab Cleanup
 ~~~~~~~~~~~~~~~~~~~~~
-#.  Return to View Learning and Blocking Settings" page
-#.  Uncheck Alarm and Block for Illegal URLs.
-#.  Click **Save** and **Apply Policy**
-        |lab1-task5|
+#.  Let's cleanup and prepare for the next module by deleting the lab1 policy we've been using.
+#.  Navigate to **Security -> Application Security -> Security Policies**
+#.  Click "Delete".
