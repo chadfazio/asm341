@@ -2,14 +2,23 @@ Lab 2.2: Session Hijacking Protection
 -------------------------------------
 
 ..  |lab22-1| image:: images/lab22-1.png
+        :width: 800px
 ..  |lab22-2| image:: images/lab22-2.png
+        :width: 800px
 ..  |lab22-3| image:: images/lab22-3.png
+        :width: 800px
 ..  |lab22-4| image:: images/lab22-4.png
+        :width: 800px
 ..  |lab22-5| image:: images/lab22-5.png
+        :width: 800px
 ..  |lab22-6| image:: images/lab22-6.png
+        :width: 800px
 ..  |lab22-7| image:: images/lab22-7.png
+        :width: 800px
 ..  |lab22-8| image:: images/lab22-8.png
+        :width: 800px
 ..  |lab22-9| image:: images/lab22-9.png
+        :width: 800px
 
 
 .. note:: Items in this section depend on steps in prior sections, please ensure you've completed all sections in lab 2 up to this point before beginning this lab.

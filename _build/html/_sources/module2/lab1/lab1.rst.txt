@@ -2,12 +2,19 @@ Lab 2.1: User Session Tracking
 ------------------------------
 
 ..  |lab21-1| image:: images/lab21-1.png
+        :width: 800px
 ..  |lab21-2| image:: images/lab21-2.png
+        :width: 800px
 ..  |lab21-3| image:: images/lab21-3.png
+        :width: 800px
 ..  |lab21-4| image:: images/lab21-4.png
+        :width: 800px
 ..  |lab21-5| image:: images/lab21-5.png
+        :width: 800px
 ..  |lab21-6| image:: images/lab21-6.png
+        :width: 800px
 ..  |lab21-7| image:: images/lab21-7.png
+        :width: 800px
 
 In this exercise we'll explore the session tracking capabilities present in BIG-IP ASM.  BIG-IP ASM not only has the capability to gather user identity details from login pages and APM, but can also generate a unique device-id for each connected client.  We'll explore both below.
 

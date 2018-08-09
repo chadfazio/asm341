@@ -3,11 +3,17 @@ Lab 2.4: Data Guard
 
 
 ..  |lab24-1| image:: images/lab24-1.png
+        :width: 800px
 ..  |lab24-2| image:: images/lab24-2.png
+        :width: 800px
 ..  |lab24-3| image:: images/lab24-3.png
+        :width: 800px
 ..  |lab24-4| image:: images/lab24-4.png
+        :width: 800px
 ..  |lab24-5| image:: images/lab24-5.png
+        :width: 800px
 ..  |lab24-6| image:: images/lab24-6.png
+        :width: 800px
 
 
 .. note:: Items in this section depend on steps in prior sections, please ensure you've completed all sections in lab 2 up to this point before beginning this lab.

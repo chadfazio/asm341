@@ -268,7 +268,7 @@
 <li><p class="first">Open the BIG-IP interface in <strong>Firefox</strong> and navigate to <strong>Security -&gt; Application Security -&gt; Sessions and Logins -&gt; Session Tracking</strong>.</p>
 </li>
 <li><p class="first"><strong>Click</strong> the checkbox to enable <strong>Detect Session Hijacking by Device ID Tracking</strong> and click <strong>Save</strong>. Then, follow the link to <strong>Learning and Blocking Settings</strong>.</p>
-<p><img alt="lab22-1" src="../../_images/lab22-1.png" /></p>
+<p><a class="reference internal" href="../../_images/lab22-1.png"><img alt="lab22-1" src="../../_images/lab22-1.png" style="width: 800px;" /></a></p>
 </li>
 <li><p class="first">Change the enforcement mode to <strong>Blocking</strong>.</p>
 </li>
@@ -305,7 +305,7 @@
 <li><p class="first">Login to WebGoat (in <strong>Firefox</strong>).</p>
 </li>
 <li><p class="first">Find the 200 request for <code class="docutils literal notranslate"><span class="pre">start.mvc</span></code> in the network debugging window and click on it. It should look like this:</p>
-<p><img alt="lab22-2" src="../../_images/lab22-2.png" /></p>
+<p><a class="reference internal" href="../../_images/lab22-2.png"><img alt="lab22-2" src="../../_images/lab22-2.png" style="width: 800px;" /></a></p>
 <p>The request and response headers should then appear to the right.</p>
 </li>
 <li><p class="first">Click <strong>Raw headers</strong>, highlight the entire <code class="docutils literal notranslate"><span class="pre">Cookies:</span></code> and <code class="docutils literal notranslate"><span class="pre">DNT:</span></code> sections and copy them to the clipboard.</p>
@@ -317,7 +317,7 @@
 <li><p class="first">Go back to Chrome and go to <code class="docutils literal notranslate"><span class="pre">http://10.1.10.145/WebGoat/start.mvc#lesson/WebGoatIntroduction.lesson</span></code> (avoid copying and pasting as you’ll loose your cookie data).</p>
 </li>
 <li><p class="first">Go back to burp and quickly <strong>replace</strong> the <strong>cookie</strong> and <strong>DNT</strong> headers in the dialog with the one in your clipboard, then click <strong>Forward</strong> several times until the button turns grey.</p>
-<p><img alt="lab22-9" src="../../_images/lab22-9.png" /></p>
+<p><a class="reference internal" href="../../_images/lab22-9.png"><img alt="lab22-9" src="../../_images/lab22-9.png" style="width: 800px;" /></a></p>
 </li>
 <li><p class="first">Disable intercept in burp.</p>
 </li>
@@ -326,23 +326,23 @@
 <li><p class="first">Return to the BIG-IP and navigate back to <strong>Security -&gt; Event Logs -&gt; Application -&gt; Requests</strong>.  You should see one or more illegal requests.</p>
 </li>
 <li><p class="first">Click on the most recent illegal request, click <strong>all details</strong> and make note of the attributes (particularly the DeviceID):</p>
-<p><img alt="lab22-3" src="../../_images/lab22-3.png" /></p>
+<p><a class="reference internal" href="../../_images/lab22-3.png"><img alt="lab22-3" src="../../_images/lab22-3.png" style="width: 800px;" /></a></p>
 </li>
 <li><p class="first">If you click on <strong>ASM Cookie Hijacking</strong> you should also see the following explanation:</p>
-<p><img alt="lab22-4" src="../../_images/lab22-4.png" /></p>
+<p><a class="reference internal" href="../../_images/lab22-4.png"><img alt="lab22-4" src="../../_images/lab22-4.png" style="width: 800px;" /></a></p>
 </li>
 <li><p class="first">Now click the <strong>magnifying glass</strong> in the upper left corner of the log frame and use the <strong>search</strong> feature find a <strong>legal</strong> request from <code class="docutils literal notranslate"><span class="pre">f5student</span></code>.  ASM’s session tracking capabilities extend to search as well.</p>
-<p><img alt="lab22-6" src="../../_images/lab22-6.png" /> <img alt="lab22-7" src="../../_images/lab22-7.png" /></p>
+<p><a class="reference internal" href="../../_images/lab22-6.png"><img alt="lab22-6" src="../../_images/lab22-6.png" style="width: 800px;" /></a> <a class="reference internal" href="../../_images/lab22-7.png"><img alt="lab22-7" src="../../_images/lab22-7.png" style="width: 800px;" /></a></p>
 </li>
 <li><p class="first">Compare the device IDs in this request vs the illegal request we just looked at. They should be different:</p>
-<p><img alt="lab22-8" src="../../_images/lab22-8.png" /></p>
+<p><a class="reference internal" href="../../_images/lab22-8.png"><img alt="lab22-8" src="../../_images/lab22-8.png" style="width: 800px;" /></a></p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last">The Device ID is essentially a fingerprint computed from a number of different browser and system attributes. They are unique identifiers that do not depend on browser session data. ASM uses these computed values to uniquely identify clients and tie them to user and session data. In this exercise we triggered an ASM Cooking Hijacking violation by replacing the cookies in the HTTP request with those of an existing valid session. ASM was able to detect this because the cookie data did not match the Device ID of the new browser.</p>
 </div>
 </li>
 <li><p class="first">If this were a production configuration, we would likely enable the blocking settings back on the <strong>Session Tracking</strong> page so that these attacks would not be allowed to continue, but for the purposes of maintaining access to the lab environment we’ve elected not to do so.  Feel free to circle back and explore these options at the end of the lab:</p>
-<p><img alt="lab22-5" src="../../_images/lab22-5.png" /></p>
+<p><a class="reference internal" href="../../_images/lab22-5.png"><img alt="lab22-5" src="../../_images/lab22-5.png" style="width: 800px;" /></a></p>
 </li>
 </ol>
 <div class="line-block">
