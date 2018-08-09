@@ -31,24 +31,44 @@ Lab 1.1: Allowed URL List
 
 Task 1 - Create a Security Policy and Enable Logging
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-#.  Browse to the BIGIP management console by opening FireFox and clicking on the **bigip01** shortcut.
-#.  Login with the credentials username: **f5student** and the password: **password**.
-#.  Create a new ASM policy by navigating to **Security -> Application Security -> Security Policies**.
-#.  Click **Create New Policy** and fill in the page as follows, then click **Create policy**.
+
+#. Browse to the BIGIP management console by opening FireFox and clicking on the **bigip01** shortcut.
+
+#. Login with the credentials username: **f5student** and the password: **password**.
+
+#. Create a new ASM policy by navigating to **Security -> Application Security -> Security Policies**.
+
+#. Click **Create New Policy** and fill in the page as follows, then click **Create policy**.
+
 	|lab1-1|
-#.  Navigate to **Local Traffic -> Virtual Servers** and select the "asm_vs" virtual server.
-#.  Click the Security tab and select policies to view Policy settings.
-        |lab1-update|
-#.  Enable logging profiles then add the "Log All Requests" profile as shown below, and click **update**.
+
+#. Navigate to **Local Traffic -> Virtual Servers** and select the "asm_vs" virtual server.
+
+#. Click the Security tab and select policies to view Policy settings.
+
+    |lab1-update|
+
+#. Enable "Log Profile" then add the "Log All Requests" profile as shown below, and click **Update**.
+
 	|lab1-2|
-#.  Finally, lets configure this ASM policy to Alarm on "Illegal URLs".  Navigate to **Security -> Application Security -> Security Policies**.
-#.  Click "View Learning and Blocking Settings".
-        |lab1-update2|
-#.  Expand the "URLs" dropdown and check Alarm.
+
+#. Finally, lets configure this ASM policy to Alarm on "Illegal URLs".  Navigate to **Security -> Application Security -> Security Policies**.
+
+#. Click "View Learning and Blocking Settings".
+
+    |lab1-update2|
+
+#. Expand the "URLs" dropdown and check Alarm for "Illegal URL".
+
+#. Click *Save* and then click *Apply Policy*.
+
         |lab1-6|
 
 Task 2 - Examine the Allowed URLs list
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+|
+
 #.  Open a new firefox tab and login to ``http://10.1.10.145/WebGoat`` (credentials are f5student / password).
 #.  Explore around the app.  Notice as you click between (for instance) **Injection Flaws**  and **Authentication Flaws**  that the URL changes to correspond to the page.  We can use this information to build policy in our WAF.
 #.  Return to the BIG-IP UI and navigate to **Security -> Application Security -> URLs -> Allowed URLs**

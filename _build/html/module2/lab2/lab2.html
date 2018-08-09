@@ -267,12 +267,12 @@
 <ol class="arabic">
 <li><p class="first">Open the BIG-IP interface in <strong>Firefox</strong> and navigate to <strong>Security -&gt; Application Security -&gt; Sessions and Logins -&gt; Session Tracking</strong>.</p>
 </li>
-<li><p class="first"><strong>Click</strong> the checkbox to enable <strong>Detect Session Hijacking by Device ID Tracking</strong> and click <strong>save</strong>. Then, follow the link to <strong>Learning and Blocking Settings</strong>.</p>
+<li><p class="first"><strong>Click</strong> the checkbox to enable <strong>Detect Session Hijacking by Device ID Tracking</strong> and click <strong>Save</strong>. Then, follow the link to <strong>Learning and Blocking Settings</strong>.</p>
 <p><img alt="lab22-1" src="../../_images/lab22-1.png" /></p>
 </li>
 <li><p class="first">Change the enforcement mode to <strong>Blocking</strong>.</p>
 </li>
-<li><p class="first">Expand the <strong>Sessions and Logins</strong> section and select <strong>alarm</strong> and <strong>block</strong>, then click <strong>save</strong>.</p>
+<li><p class="first">Expand the <strong>Sessions and Logins</strong> section and select <strong>alarm</strong> and <strong>block</strong>, then click <strong>Save</strong>.</p>
 </li>
 <li><p class="first">Click <strong>Apply Policy</strong> then click <strong>OK</strong>.</p>
 </li>
@@ -292,7 +292,7 @@
 <ol class="arabic">
 <li><p class="first">Open a Linux terminal and run <code class="docutils literal notranslate"><span class="pre">BurpSuiteCommunity</span> <span class="pre">&amp;</span></code>.  Accept the defaults and click through to the main window.</p>
 </li>
-<li><p class="first">Go to the proxy tab and disable intercept so background requests from chrome don’t get hung up.</p>
+<li><p class="first">Go to the proxy tab and disable intercept so background requests from Chrome don’t get hung up.</p>
 </li>
 <li><p class="first">Run <code class="docutils literal notranslate"><span class="pre">google-chrome-stable</span> <span class="pre">--incognito</span> <span class="pre">--proxy-server=&quot;http://127.0.0.1:8080&quot;</span></code> in the same or a different terminal.</p>
 </li>
@@ -312,7 +312,7 @@
 </li>
 <li><p class="first">Go back to Chrome and refresh the WebGoat login page 12 times to generate some traffic.</p>
 </li>
-<li><p class="first">Go back to burp and re-enable intercept</p>
+<li><p class="first">Go back to burp and re-enable intercept.</p>
 </li>
 <li><p class="first">Go back to Chrome and go to <code class="docutils literal notranslate"><span class="pre">http://10.1.10.145/WebGoat/start.mvc#lesson/WebGoatIntroduction.lesson</span></code> (avoid copying and pasting as you’ll loose your cookie data).</p>
 </li>
@@ -334,11 +334,11 @@
 <li><p class="first">Now click the <strong>magnifying glass</strong> in the upper left corner of the log frame and use the <strong>search</strong> feature find a <strong>legal</strong> request from <code class="docutils literal notranslate"><span class="pre">f5student</span></code>.  ASM’s session tracking capabilities extend to search as well.</p>
 <p><img alt="lab22-6" src="../../_images/lab22-6.png" /> <img alt="lab22-7" src="../../_images/lab22-7.png" /></p>
 </li>
-<li><p class="first">Compare the device IDs in this request vs the illegal request we just looked at.  They should be different:</p>
+<li><p class="first">Compare the device IDs in this request vs the illegal request we just looked at. They should be different:</p>
 <p><img alt="lab22-8" src="../../_images/lab22-8.png" /></p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">The Device ID is essentially a fingerprint computed from a number of different browser and system attributes.  They are unique identifiers that do not depend on browser session data.  ASM uses these computed values to uniquely identify clients and tie them to user and session data.  In this exercise we triggered an ASM Cooking Hijacking violation by replacing the cookies in the HTTP request with those of an existing valid session.  ASM was able to detect this because the cookie data did not match the Device ID of the new browser.</p>
+<p class="last">The Device ID is essentially a fingerprint computed from a number of different browser and system attributes. They are unique identifiers that do not depend on browser session data. ASM uses these computed values to uniquely identify clients and tie them to user and session data. In this exercise we triggered an ASM Cooking Hijacking violation by replacing the cookies in the HTTP request with those of an existing valid session. ASM was able to detect this because the cookie data did not match the Device ID of the new browser.</p>
 </div>
 </li>
 <li><p class="first">If this were a production configuration, we would likely enable the blocking settings back on the <strong>Session Tracking</strong> page so that these attacks would not be allowed to continue, but for the purposes of maintaining access to the lab environment we’ve elected not to do so.  Feel free to circle back and explore these options at the end of the lab:</p>

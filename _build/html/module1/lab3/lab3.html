@@ -225,7 +225,6 @@
   </p>
   <ul>
 <li><a class="reference internal" href="#">Lab 1.3: Blocking Mode Override</a><ul>
-<li><a class="reference internal" href="#introduction">Introduction</a></li>
 <li><a class="reference internal" href="#task-1-enabling-transparent-mode-for-certain-host-names">Task 1 - Enabling Transparent Mode for certain host names</a></li>
 </ul>
 </li>
@@ -257,8 +256,6 @@
         
   <div class="section" id="lab-1-3-blocking-mode-override">
 <h1>Lab 1.3: Blocking Mode Override<a class="headerlink" href="#lab-1-3-blocking-mode-override" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="introduction">
-<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
 <p>If we’re going to all this trouble to build a tight WAF policy, why do we now want to override it?  There can be several reasons an organization wants to enforce security policy except for specific users (IPs).  These reasons include:</p>
 <blockquote>
 <div><ul class="simple">
@@ -268,17 +265,22 @@
 </ul>
 </div></blockquote>
 <p>As the defined hostnames will be able to completely bypass security policy it’s important to protect the bypass hostnames.</p>
-</div>
 <div class="section" id="task-1-enabling-transparent-mode-for-certain-host-names">
 <h2>Task 1 - Enabling Transparent Mode for certain host names<a class="headerlink" href="#task-1-enabling-transparent-mode-for-certain-host-names" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic simple">
-<li>Navigate to <strong>Security -&gt; Application Security -&gt; Headers -&gt; Host Names</strong></li>
-<li><dl class="first docutils">
-<dt>Click <strong>Create</strong></dt>
-<dd><img alt="lab3-1" src="../../_images/lab3-1.png" /></dd>
-</dl>
-</li>
-<li>Click <strong>Create</strong>  and then <strong>Apply Policy</strong></li>
+<li>Navigate to <strong>Security -&gt; Application Security -&gt; Headers -&gt; Host Names</strong> .</li>
+<li>Click <strong>Create</strong> .</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<blockquote>
+<div><img alt="lab3-1" src="../../_images/lab3-1.png" /></div></blockquote>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="arabic simple">
+<li>Click <strong>Update</strong> and then <strong>Apply Policy</strong> .</li>
 </ol>
 </div>
 </div>

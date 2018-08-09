@@ -3,9 +3,6 @@ Lab 1.3: Blocking Mode Override
 
 .. |lab3-1| image:: images/lab3-1.png
 
-Introduction
-~~~~~~~~~~~~~
-
 If we're going to all this trouble to build a tight WAF policy, why do we now want to override it?  There can be several reasons an organization wants to enforce security policy except for specific users (IPs).  These reasons include:
 
         - Testing a new version of the Application
@@ -18,7 +15,13 @@ As the defined hostnames will be able to completely bypass security policy it's 
 Task 1 - Enabling Transparent Mode for certain host names	
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-#.  Navigate to **Security -> Application Security -> Headers -> Host Names**
-#.  Click **Create**
+#.  Navigate to **Security -> Application Security -> Headers -> Host Names** .
+#.  Click **Create** .
+
+|
+
 	|lab3-1|
-#.  Click **Create**  and then **Apply Policy**
+
+|
+
+#.  Click **Update** and then **Apply Policy** .

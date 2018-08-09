@@ -262,43 +262,53 @@
 <h1>Lab 1.1: Allowed URL List<a class="headerlink" href="#lab-1-1-allowed-url-list" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="task-1-create-a-security-policy-and-enable-logging">
 <h2>Task 1 - Create a Security Policy and Enable Logging<a class="headerlink" href="#task-1-create-a-security-policy-and-enable-logging" title="Permalink to this headline">¶</a></h2>
-<ol class="arabic simple">
-<li>Browse to the BIGIP management console by opening FireFox and clicking on the <strong>bigip01</strong> shortcut.</li>
-<li>Login with the credentials username: <strong>f5student</strong> and the password: <strong>password</strong></li>
-<li>Create a new ASM policy by navigating to <strong>Security -&gt; Application Security -&gt; Security Policies</strong>.</li>
-<li><dl class="first docutils">
-<dt>Click <strong>Create New Policy</strong> and fill in the page as follows, then click <strong>Create policy</strong></dt>
-<dd><a class="reference internal" href="../../_images/lab1-1update.png"><img alt="lab1-1" src="../../_images/lab1-1update.png" style="width: 800px;" /></a></dd>
-</dl>
+<ol class="arabic">
+<li><p class="first">Browse to the BIGIP management console by opening FireFox and clicking on the <strong>bigip01</strong> shortcut.</p>
 </li>
-<li>Navigate to <strong>Local Traffic -&gt; Virtual Servers</strong> and select the “asm_vs” virtual server.</li>
-<li><dl class="first docutils">
-<dt>Click the Security tab and select policies to view Policy settings.</dt>
-<dd><a class="reference internal" href="../../_images/lab1-update.png"><img alt="lab1-update" src="../../_images/lab1-update.png" style="width: 800px;" /></a></dd>
-</dl>
+<li><p class="first">Login with the credentials username: <strong>f5student</strong> and the password: <strong>password</strong>.</p>
 </li>
-<li><dl class="first docutils">
-<dt>Enable logging profiles then add the “Log All Requests” profile as shown below, and click <strong>update</strong></dt>
-<dd><a class="reference internal" href="../../_images/lab1-2.png"><img alt="lab1-2" src="../../_images/lab1-2.png" style="width: 800px;" /></a></dd>
-</dl>
+<li><p class="first">Create a new ASM policy by navigating to <strong>Security -&gt; Application Security -&gt; Security Policies</strong>.</p>
 </li>
-<li>Finally, lets configure this ASM policy to Alarm on “Illegal URLs”.  Navigate to <strong>Security -&gt; Application Security -&gt; Security Policies</strong>.</li>
-<li><dl class="first docutils">
-<dt>Click “View Learning and Blocking Settings”</dt>
-<dd><a class="reference internal" href="../../_images/lab1-update2.png"><img alt="lab1-update2" src="../../_images/lab1-update2.png" style="width: 800px;" /></a></dd>
-</dl>
+<li><p class="first">Click <strong>Create New Policy</strong> and fill in the page as follows, then click <strong>Create policy</strong>.</p>
+<blockquote>
+<div><p><a class="reference internal" href="../../_images/lab1-1update.png"><img alt="lab1-1" src="../../_images/lab1-1update.png" style="width: 800px;" /></a></p>
+</div></blockquote>
 </li>
-<li><dl class="first docutils">
-<dt>Expand the “URLs” dropdown and check Alarm</dt>
-<dd><a class="reference internal" href="../../_images/lab1-6update.png"><img alt="lab1-6" src="../../_images/lab1-6update.png" style="width: 800px;" /></a></dd>
-</dl>
+<li><p class="first">Navigate to <strong>Local Traffic -&gt; Virtual Servers</strong> and select the “asm_vs” virtual server.</p>
+</li>
+<li><p class="first">Click the Security tab and select policies to view Policy settings.</p>
+<blockquote>
+<div><p><a class="reference internal" href="../../_images/lab1-update.png"><img alt="lab1-update" src="../../_images/lab1-update.png" style="width: 800px;" /></a></p>
+</div></blockquote>
+</li>
+<li><p class="first">Enable “Log Profile” then add the “Log All Requests” profile as shown below, and click <strong>Update</strong>.</p>
+<blockquote>
+<div><p><a class="reference internal" href="../../_images/lab1-2.png"><img alt="lab1-2" src="../../_images/lab1-2.png" style="width: 800px;" /></a></p>
+</div></blockquote>
+</li>
+<li><p class="first">Finally, lets configure this ASM policy to Alarm on “Illegal URLs”.  Navigate to <strong>Security -&gt; Application Security -&gt; Security Policies</strong>.</p>
+</li>
+<li><p class="first">Click “View Learning and Blocking Settings”.</p>
+<blockquote>
+<div><p><a class="reference internal" href="../../_images/lab1-update2.png"><img alt="lab1-update2" src="../../_images/lab1-update2.png" style="width: 800px;" /></a></p>
+</div></blockquote>
+</li>
+<li><p class="first">Expand the “URLs” dropdown and check Alarm for “Illegal URL”.</p>
+</li>
+<li><p class="first">Click <em>Save</em> and then click <em>Apply Policy</em>.</p>
+<blockquote>
+<div><p><a class="reference internal" href="../../_images/lab1-6update.png"><img alt="lab1-6" src="../../_images/lab1-6update.png" style="width: 800px;" /></a></p>
+</div></blockquote>
 </li>
 </ol>
 </div>
 <div class="section" id="task-2-examine-the-allowed-urls-list">
 <h2>Task 2 - Examine the Allowed URLs list<a class="headerlink" href="#task-2-examine-the-allowed-urls-list" title="Permalink to this headline">¶</a></h2>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
 <ol class="arabic simple">
-<li>Open a new firefox tab and login to <code class="docutils literal notranslate"><span class="pre">http://10.1.10.145/WebGoat</span></code> (credentials are f5student / password)</li>
+<li>Open a new firefox tab and login to <code class="docutils literal notranslate"><span class="pre">http://10.1.10.145/WebGoat</span></code> (credentials are f5student / password).</li>
 <li>Explore around the app.  Notice as you click between (for instance) <strong>Injection Flaws</strong>  and <strong>Authentication Flaws</strong>  that the URL changes to correspond to the page.  We can use this information to build policy in our WAF.</li>
 <li><dl class="first docutils">
 <dt>Return to the BIG-IP UI and navigate to <strong>Security -&gt; Application Security -&gt; URLs -&gt; Allowed URLs</strong></dt>
@@ -335,7 +345,7 @@
 </dl>
 </li>
 <li><dl class="first docutils">
-<dt>Check the Block box for Illegal URLs.  Click <strong>Save</strong> followed by <strong>Apply Policy</strong></dt>
+<dt>Check the Block box for Illegal URLs.  Click <strong>Save</strong> followed by <strong>Apply Policy</strong>.</dt>
 <dd><a class="reference internal" href="../../_images/lab1-update3.png"><img alt="lab1-update3" src="../../_images/lab1-update3.png" style="width: 800px;" /></a></dd>
 </dl>
 </li>
@@ -353,11 +363,11 @@
 <h2>Task 4 - Create Explicit Allowed URLs<a class="headerlink" href="#task-4-create-explicit-allowed-urls" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic simple">
 <li>Now that we’ve seen how wildcard URLs work, let’s get the site to work with explict URLs.</li>
-<li>Delete the Wildcard URL /WebGoat/</li>
-<li>Click <strong>Apply Policy</strong></li>
+<li>Delete the Wildcard URL /WebGoat/  .</li>
+<li>Click <strong>Apply Policy</strong>.</li>
 <li>Create explict URLs to allow access to <strong>only</strong> the login page, landing page, and Insecure Login Page.</li>
 <li><dl class="first docutils">
-<dt>Hint: use the information in the Illegal Requests log to build explicit and wildcard URLs to fully render pages.</dt>
+<dt>Hint: Use the information in the Illegal Requests log to build explicit and wildcard URLs to fully render pages.</dt>
 <dd><a class="reference internal" href="../../_images/lab1-task4.png"><img alt="lab1-task4" src="../../_images/lab1-task4.png" style="width: 800px;" /></a></dd>
 </dl>
 </li>
@@ -367,7 +377,7 @@
 <h2>Task 6 - Lab Cleanup<a class="headerlink" href="#task-6-lab-cleanup" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic simple">
 <li>Let’s cleanup and prepare for the next module by deleting the lab1 policy we’ve been using.</li>
-<li>Navigate to <strong>Security -&gt; Application Security -&gt; Security Policies</strong></li>
+<li>Navigate to <strong>Security -&gt; Application Security -&gt; Security Policies</strong>.</li>
 <li>Click “Delete”.</li>
 </ol>
 </div>

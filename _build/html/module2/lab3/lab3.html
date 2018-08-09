@@ -258,6 +258,7 @@
         
   <div class="section" id="lab-2-3-credential-stuffing">
 <h1>Lab 2.3: Credential Stuffing<a class="headerlink" href="#lab-2-3-credential-stuffing" title="Permalink to this headline">¶</a></h1>
+<p>Credential stuffing is a type of brute force attack that leverages stolen credentials from another source. This source is most commonly the breach of a widley used online service.  These leaked credentials are then levered in an attempt to compromise higher value targets in instances where users used the same credentials across multiple services. BIG-IP now has the capability to detect these types of attacks by employing a database of credentials that are known to have been compromised in a previous breach. The credentials are stored as one-way hashed usernames and passwords to protect them from further disclosure. Also note that we’ve chosen CAPTCHA as mitigation for this lab because it provides immediate feedback to the student.  In a production environment, Client Side Integrity Defense (or both), may be a more effective form of mitigation during an actual attack.  Feel free to experiment with this in the lab.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last">Items in this section depend on steps in prior sections, please ensure you’ve completed all sections in lab 2 up to this point before beginning this lab.</p>
@@ -270,7 +271,7 @@
 <li><p class="first">Navigate to <strong>Security -&gt; Application Security -&gt; Anomaly Detection -&gt; Brute Force</strong> and click <strong>Create</strong>.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">ASM has a number of brute force attack detection capabilities that are beyond the scope of this exercise.  Take some time to examine some of the other options as you work through this lab.  For more information see:  <code class="docutils literal notranslate"><span class="pre">https://support.f5.com/kb/en-us/products/big-ip_asm/manuals/product/asm-implementations-13-1-0/6.html</span></code></p>
+<p class="last">ASM has a number of brute force attack detection capabilities that are beyond the scope of this exercise.  Take some time to examine some of the other options as you work through this lab.  For more information see:  <code class="docutils literal notranslate"><span class="pre">https://support.f5.com/kb/en-us/products/big-ip_asm/manuals/product/asm-implementations-13-1-0/6.html</span></code> .</p>
 </div>
 </li>
 <li><p class="first">Select the login page we created in Lab 2.1.</p>
@@ -279,26 +280,22 @@
 <li><p class="first">Configure <strong>Credential Stuffing</strong> detection within the <strong>Distributed Brute Force</strong> Section as follows:</p>
 <p><img alt="lab23-3" src="../../_images/lab23-3.png" /></p>
 </li>
-<li><p class="first">Click <strong>Create</strong>.</p>
+<li><p class="first">Click <strong>Create</strong> .</p>
 </li>
-<li><p class="first">Click <strong>Apply Policy</strong>, then click <strong>OK</strong></p>
+<li><p class="first">Click <strong>Apply Policy</strong>, then click <strong>OK</strong> .</p>
 </li>
 </ol>
 </div>
 <div class="section" id="task-2-test-credential-stuffing-detection">
 <h2>Task 2 - Test Credential Stuffing Detection<a class="headerlink" href="#task-2-test-credential-stuffing-detection" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic">
-<li><p class="first">Open a new Private Browsing window in <strong>Firefox</strong>.</p>
+<li><p class="first">Open a new Private Browsing window in <strong>Firefox</strong> .</p>
 </li>
-<li><p class="first">Go to the to WebGoat login page at <code class="docutils literal notranslate"><span class="pre">http://10.1.10.145/WebGoat/login</span></code> but <strong>do not login as f5student</strong></p>
+<li><p class="first">Go to the to WebGoat login page at <code class="docutils literal notranslate"><span class="pre">http://10.1.10.145/WebGoat/login</span></code> but <strong>do not login as f5student</strong> .</p>
 </li>
 <li><p class="first">Attempt to login using the username <code class="docutils literal notranslate"><span class="pre">demo33&#64;fidnet.com</span></code> and password <code class="docutils literal notranslate"><span class="pre">mountainman01</span></code>.  On the second attempt, you should immediately be challenged via CAPTCHA because this username/password combination is present in the credential stuffing database.</p>
 </li>
 <li><p class="first"><strong>Solve</strong> the CAPTCHA(s) and continue.</p>
-<div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">Credential stuffing is a type of brute force attack that leverages stolen credentials from another source.  This source is most commonly the breach of a widley used online service.  These leaked credentials are then levered in an attempt to compromise higher value targets in instances where users used the same credentials across multiple services.  BIG-IP now has the capability to detect these types of attacks by employing a database of credentials that are known to have been compromised in a previous breach.  The credentials are stored as one-way hashed usernames and passwords to protect them from further disclosure.  Also note that we’ve chosen CAPTCHA as mitigation for this lab because it provides immediate feedback to the student.  In a production environment, Client Side Integrity Defense (or both), may be a more effective form of mitigation during an actual attack.  Feel free to experiment with this in the lab.</p>
-</div>
 </li>
 <li><p class="first">Examine the most recent <strong>illegal</strong> request in the event log:</p>
 <p><img alt="lab23-4" src="../../_images/lab23-4.png" /></p>

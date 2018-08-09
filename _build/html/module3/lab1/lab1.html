@@ -260,97 +260,73 @@
 <ol class="arabic">
 <li><p class="first">Browse to the BIGIP managemnet console.</p>
 </li>
-<li><p class="first">Create a New ASM policy by navigating to <strong>Security -&gt; Application Security -&gt; Security Policies</strong></p>
+<li><p class="first">Create a New ASM policy by navigating to <strong>Security -&gt; Application Security -&gt; Security Policies</strong>.</p>
 </li>
-<li><dl class="first docutils">
-<dt>Click <strong>Create New Policy</strong> and fill in the page as follows, then click <strong>Create Policy</strong></dt>
-<dd><p class="first last"><img alt="lab3-1" src="../../_images/lab3-11.png" /></p>
-</dd>
-</dl>
+<li><p class="first">Click <strong>Create New Policy</strong> and fill in the page as follows, then click <strong>Create Policy</strong>.</p>
+<p><a class="reference internal" href="../../_images/lab3-11.png"><img alt="lab3-1" src="../../_images/lab3-11.png" style="width: 800px;" /></a></p>
 </li>
-<li><p class="first">Now lets create a DoS profile to go along with our WAF policy</p>
+<li><p class="first">Now lets create a DoS profile to go along with our WAF policy.</p>
 </li>
-<li><dl class="first docutils">
-<dt>Navigate to <strong>Security -&gt; DoS Protection -&gt; Dos Profiles</strong> and then click the <strong>Create</strong> button.</dt>
-<dd><p class="first last"><img alt="lab3-2" src="../../_images/lab3-2.png" /></p>
-</dd>
-</dl>
+<li><p class="first">Navigate to <strong>Security -&gt; DoS Protection -&gt; Dos Profiles</strong> and then click the <strong>Create</strong> button.</p>
+<p><a class="reference internal" href="../../_images/lab3-2.png"><img alt="lab3-2" src="../../_images/lab3-2.png" style="width: 800px;" /></a></p>
 </li>
-<li><p class="first">Click ‘Create’ to create a new DoS profile</p>
+<li><p class="first">Click ‘Create’ to create a new DoS profile.</p>
 </li>
-<li><p class="first">Name the profile “module3” and click ‘Finished’</p>
+<li><p class="first">Name the profile “module3” and click ‘Finished’.</p>
 </li>
-<li><dl class="first docutils">
-<dt>Click the profile to configure.</dt>
-<dd><p class="first last"><img alt="lab3-3" src="../../_images/lab3-3.png" /></p>
-</dd>
-</dl>
+<li><p class="first">Click the profile to configure.</p>
+<p><a class="reference internal" href="../../_images/lab3-3.png"><img alt="lab3-3" src="../../_images/lab3-3.png" style="width: 800px;" /></a></p>
 </li>
-<li><dl class="first docutils">
-<dt>Select the ‘Application Security’ tab</dt>
-<dd><p class="first last"><img alt="lab3-4" src="../../_images/lab3-4.png" /></p>
-</dd>
-</dl>
+<li><p class="first">Select the ‘Application Security’ tab.</p>
+<p><a class="reference internal" href="../../_images/lab3-4.png"><img alt="lab3-4" src="../../_images/lab3-4.png" style="width: 800px;" /></a></p>
 </li>
-<li><dl class="first docutils">
-<dt>Click ‘Edit”, followed by the ‘Enabled’ checkbox to turn on Bot Detection.</dt>
-<dd><p class="first"><img alt="lab3-5" src="../../_images/lab3-5.png" /></p>
-<p class="last"><img alt="lab3-6" src="../../_images/lab3-6.png" /></p>
-</dd>
-</dl>
+<li><p class="first">Click “Edit”, followed by the ‘Enabled’ checkbox to turn on Bot Detection.</p>
+<p><a class="reference internal" href="../../_images/lab3-5.png"><img alt="lab3-5" src="../../_images/lab3-5.png" style="width: 800px;" /></a></p>
+<p><a class="reference internal" href="../../_images/lab3-6.png"><img alt="lab3-6" src="../../_images/lab3-6.png" style="width: 800px;" /></a></p>
 </li>
-<li><dl class="first docutils">
-<dt>Let’s configure the types of bot protection that offer the best bang for the buck, starting with Signatures. Click the ‘Bot Signatures’ tab and click edit.</dt>
-<dd><p class="first last"><img alt="lab3-7" src="../../_images/lab3-7.png" /></p>
-</dd>
-</dl>
+<li><p class="first">Let’s configure the types of bot protection that offer the best bang for the buck, starting with Signatures. Click the ‘Bot Signatures’ tab and click edit.</p>
+<p><a class="reference internal" href="../../_images/lab3-7.png"><img alt="lab3-7" src="../../_images/lab3-7.png" style="width: 800px;" /></a></p>
 </li>
-<li><dl class="first docutils">
-<dt>Now click the ‘Enabled’ checkbox.  You’ll see we can group bots by category or can select them uniquely.</dt>
-<dd><p class="first last"><img alt="lab3-8" src="../../_images/lab3-8.png" /></p>
-</dd>
-</dl>
+<li><p class="first">Now click the ‘Enabled’ checkbox.  You’ll see we can group bots by category or can select them uniquely.</p>
+<p><a class="reference internal" href="../../_images/lab3-8.png"><img alt="lab3-8" src="../../_images/lab3-8.png" style="width: 800px;" /></a></p>
 </li>
 <li><p class="first">Click ‘Edit’ to explore the settings further. Try to resist the urge to modify any settings, the defaults will serve us well.</p>
 </li>
-<li><dl class="first docutils">
-<dt>For complete protection, let’s go ahead an enable Proactive Bot Defense as well.  Click on the ‘Proactive Bot Defense’ tab, click ‘Edit’, and change the dropdown to “During Attacks”.</dt>
-<dd><p class="first last"><img alt="lab3-9" src="../../_images/lab3-9.png" /></p>
-</dd>
-</dl>
+<li><p class="first">For complete protection, let’s go ahead an enable Proactive Bot Defense as well.  Click on the ‘Proactive Bot Defense’ tab, click ‘Edit’, and change the dropdown to “During Attacks”.</p>
+<blockquote>
+<div><p><a class="reference internal" href="../../_images/lab3-9.png"><img alt="lab3-9" src="../../_images/lab3-9.png" style="width: 800px;" /></a></p>
+</div></blockquote>
 </li>
 <li><p class="first">Click ‘Update’ to save changes.</p>
 </li>
 <li><p class="first">Now let’s bind this DoS policy to a Virtual Server.  Navigate to <strong>Local Traffic -&gt; Virtual Servers -&gt; Virtual Server List</strong> and select ‘asm_vs’.</p>
 </li>
-<li><p class="first">Click on ‘Security” tab and select ‘Policies’</p>
+<li><p class="first">Click on ‘Security” tab and select ‘Policies’.</p>
 </li>
-<li><dl class="first docutils">
-<dt>Enable the ‘Module3’ Application Security and DoS Protection profiles.</dt>
-<dd><p class="first last"><img alt="lab3a" src="../../_images/lab3-10.png" /></p>
-</dd>
-</dl>
+<li><p class="first">Enable the ‘Module3’ Application Security and DoS Protection profiles.</p>
+<p><a class="reference internal" href="../../_images/lab3-10.png"><img alt="lab3a" src="../../_images/lab3-10.png" style="width: 800px;" /></a></p>
 </li>
-<li><p class="first">Click ‘Update’</p>
+<li><p class="first">Click ‘Update’.</p>
 </li>
 </ol>
 </div>
 <div class="section" id="task-2-simulating-bot-traffic">
 <h2>Task 2 - Simulating Bot Traffic<a class="headerlink" href="#task-2-simulating-bot-traffic" title="Permalink to this headline">¶</a></h2>
-<ol class="arabic simple">
-<li>Now that we have a DoS profile in place, lets test it!</li>
-<li><dl class="first docutils">
-<dt>Open a command prompt on your jumpbox.</dt>
-<dd><img alt="lab3b" src="../../_images/lab3b.png" /></dd>
-</dl>
+<ol class="arabic">
+<li><p class="first">Now that we have a DoS profile in place, lets test it!</p>
 </li>
-<li><dl class="first docutils">
-<dt>Execute the following command:</dt>
-<dd>python /opt/goldeneye.py <a class="reference external" href="http://10.1.10.145">http://10.1.10.145</a> -d -w 50 -s 200</dd>
-</dl>
+<li><p class="first">Open a command prompt on your jumpbox.</p>
+<p><a class="reference internal" href="../../_images/lab3b.png"><img alt="lab3b" src="../../_images/lab3b.png" style="width: 800px;" /></a></p>
 </li>
+<li><p class="first">Execute the following command:</p>
+</li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python /opt/goldeneye.py http://10.1.10.145 -d -w <span class="m">50</span> -s <span class="m">200</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="4">
 <li>Wait 5 minutes for traffic generation and logging.</li>
-<li>In the BIG-IP WebUI, Navigate to <strong>Security -&gt; Event Logs -&gt; Application Events</strong></li>
+<li>In the BIG-IP WebUI, Navigate to <strong>Security -&gt; Event Logs -&gt; Application Events</strong> .</li>
 <li>Review the attacks detected by ASM.</li>
 </ol>
 </div>
