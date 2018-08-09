@@ -24,4 +24,4 @@ Task 1 - Enabling Transparent Mode for certain host names
 
 |
 
-#.  Click **Create** and then **Apply Policy** .
+#.  Click **Update** and then **Apply Policy** .
