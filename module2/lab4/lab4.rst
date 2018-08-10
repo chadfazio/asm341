@@ -66,8 +66,7 @@ Task 2 - Test DataGuard
 
     |lab24-6|
 
-
-        .. note:: You can also use PCRE to define custom patterns for obfuscation. Feel free to experiment with this as it can have interesting consequences for the application (intentional or otherwise).
+    .. NOTE:: You can also use PCRE to define custom patterns for obfuscation.  Feel free to experiment with this as it can have interesting consequences for the application (intentional or otherwise).
 
 #.  When you're finished, return to **Local Traffic -> Virtual Servers -> asm_vs -> Security Tab -> Policies** and **disable** your ASM policy in preparation for the next module.
 
