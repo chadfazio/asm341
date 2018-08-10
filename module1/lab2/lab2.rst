@@ -9,25 +9,30 @@ Lab 1.2: Allowed (and disallowed...) HTTP Request Methods
 
 Task 1 - Allowed Methods
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-#.  In the BIG-IP WebUI navigate to *Security -> Application Security -> Headers -> Methods* .
+
+#. Navigate to Security -> Application Security -> Security Policies -> Policies List and click "Create". 
 
 	|lab2-1|
 
-#.  Policy wide Method permissions are configured here.  If your application requires a method beyond the default three, they can be added by clicking the **Create** button .
+#. In the BIG-IP WebUI navigate to *Security -> Application Security -> Headers -> Methods* .
 
-    |lab2-3|
+#. Policy wide Method permissions are configured here.  If your application requires a method beyond the default three, they can be added by clicking the **Create** button .
+
+    |lab2-2|
 
 Task 2 - Restricting Method on per URL basis
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-#.  Let's return to our Allowed URLs list **Security -> Application Security -> URLs -> Allowed URLs** .
+#. Let's return to our Allowed URLs list **Security -> Application Security -> URLs -> Allowed URLs** .
 
-#.  Click **Create** and use the following settings: .
+#. Click **Create** and use the following settings: .
 
-    |lab2-2|
+    |lab2-3|
 
-#.  Click **Apply Policy** .
+#. Click **Create** .
 
-#.  Attempt to login to ``http://10.1.10.145/WebGoat/login`` .
+#. Click **Apply Policy** .
 
-#.  What is the result, and why?
+#. Attempt to login to ``http://10.1.10.145/WebGoat/login`` .
+
+#. What is the result, and why?

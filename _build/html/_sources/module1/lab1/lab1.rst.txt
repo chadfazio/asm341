@@ -108,7 +108,7 @@ Task 3 - Modify the Allowed URLs List
 
 #.  Attempt to browse the test site ``http://10.1.10.145/WebGoat`` , what are your results?
 
-#.  Now lets add an Allowed URL.  Click the **Create** button and create an allowed URL with the following settings:
+#.  Return to the Allowed HTTP URLs and add an Allowed URL. Click the **Create** button and create an allowed URL with the following settings:
 
     |lab1-8|
 
