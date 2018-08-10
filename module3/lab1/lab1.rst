@@ -253,6 +253,8 @@ Lets say for a minute you wanted to customize your Bot Defense logging.  iRules 
 
     .. Note:: These iRules could generate a lot of noise and may not be appropriate for production use without some filtering or rate limiting.
 
+    .. Note:: In this lab we used iRules to customize Bot Defense logging, but it can also be used to modify Bot Defense behavior.  For more information see ``https://devcentral.f5.com/wiki/iRules.BOTDEFENSE__action.ashx``.
+
 #. Remove the iRule and DoS Profile from the Virtual Server before you continue.
 
 |
