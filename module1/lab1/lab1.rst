@@ -25,6 +25,12 @@ Lab 1.1: Allowed URL List
         :width: 800px
 .. |lab1-task4| image:: images/lab1-task4.png
         :width: 800px
+.. |lab1-4-1| image:: images/lab1-4-1.png
+        :width: 800px
+.. |lab1-4-2| image:: images/lab1-4-2.png
+        :width: 800px
+.. |lab1-4-3| image:: images/lab1-4-3.png
+        :width: 800px
 .. |lab1-task5| image:: images/lab1-task5.png
         :width: 800px
 
@@ -39,6 +45,8 @@ Task 1 - Create a Security Policy and Enable Logging
 #. Create a new ASM policy by navigating to **Security -> Application Security -> Security Policies**.
 
 #. Click **Create New Policy** and fill in the page as follows, using lab1 as the name, then click **Create Policy**.
+
+	.. note:: If you find the images difficult to read, you can click on them to zoom in.
 
 	|lab1-1|
 
@@ -116,20 +124,43 @@ Task 3 - Modify the Allowed URLs List
 
 #.  Test site again, are you able to browse?
 
-Task 4 - Create Explicit Allowed URLs
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Task 4 - Create Explicit Allowed URLs with Manual Traffic Learning
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-#.  Now that we've seen how wildcard URLs work, let's get the site to work with explict URLs.
+#.  Now that we've seen how wildcard URLs work, let's get the site to work with explicit URLs.
 
-#.  Delete the Wildcard URL /WebGoat/  .
+#.  Delete the Wildcard URL **/WebGoat/*** .
 
 #.  Click **Apply Policy**.
 
-#.  Create explict URLs to allow access to **only** the login page, landing page, and Insecure Login Page.
+#.  Due to the number of URLs actually involved in making our application work, we'll see if we can use manual traffic learning to make the Login page render properly.
+    
+    .. note:: It is much easier to use the automatic policy builder or manaul traffic learning starting with wildcard URL entries.  We're doing it this way so that you'll get a better understanding of how ASM works under the hood.
 
-#.  Hint: Use the information in the Illegal Requests log to build explicit and wildcard URLs to fully render pages.
+#.  Return to the learning and blocking settings page once more and configure ASM to always learn URLs:
 
-    |lab1-task4|
+    |lab1-4-1|    
+
+#.  Click **save** then **Apply Policy**.
+
+#.  Now, attempt to load the login screen again (``http://10.1.10.145/WebGoat/login``) then return to the Requests log at **Security -> Event Logs -> Application -> Requests**.
+
+#.  Find the entry for the login page and click **Accept Request**.
+
+    |lab1-4-2|
+
+#.  Return to **Security -> Application Security -> URLs -> Allowed URLs**.
+    |
+    There should now be an explicit entry for **/WebGoat/login**.
+
+#.  Select the entry and click **Enforce**, then **OK**, then click **Apply Policy** followed by **OK**
+
+    |lab1-4-3|
+
+#.  Try to load ``http://10.1.10.145/WebGoat/login`` again.  It should now partially load but will not look correct.  This is because the application is actually comprised of many other URLs that are not in our list. 
+
+#.  Repeat these steps a few times and see if you can get the login page to load fully.  Note that you can accept multiple requests at once before returning to the URLs dialog and new requests in the Requests log should be bolded...making it easier to find the issue.
+
 
 
 Task 6 - Lab Cleanup
@@ -139,4 +170,4 @@ Task 6 - Lab Cleanup
 
 #.  Navigate to **Security -> Application Security -> Security Policies**.
 
-#.  Click "Delete".
+#.  Select lab1 and click **Delete**.
