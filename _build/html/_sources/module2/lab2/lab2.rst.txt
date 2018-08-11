@@ -23,6 +23,8 @@ Lab 2.2: Session Hijacking Protection
         :width: 800px
 
 
+Session hijacking is a class of attacks that allow an illegitimate user to take control of a legitimate session that was initiated by a legitimate user.  Initially this class of attacks was first observed against simple unencrypted protocols like telnet, though this typically required the attacker to have control of a system in the same network segment as the target and strike while the TCP connection was still active.  For the purposes of this lab, we’re actually referring to HTTP session hijacking which is similar in concept but completely different in its execution.  HTTP applications typically use cookies to store session information, so when we say “HTTP Session Hijacking”, we’re *usually* referring to cookie hijacking which actually involves the theft of the cookie and thus the user’s session key.  HTTP based applications often tend to maintain session state long after the TCP connection has been shut down, which actually makes the attack more practical than our telnet example.  In most cases web applications will implicitly trust a session cookie, even a stolen one…which is clearly a problem.  ASM has a number of capabilities that can address these issues and you’ll explore one of the more interesting approaches in this lab.
+
 .. note:: Items in this section depend on steps in prior sections, please ensure you've completed all sections in lab 2 up to this point before beginning this lab.
 
 
