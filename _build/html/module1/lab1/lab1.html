@@ -228,7 +228,7 @@
 <li><a class="reference internal" href="#task-1-create-a-security-policy-and-enable-logging">Task 1 - Create a Security Policy and Enable Logging</a></li>
 <li><a class="reference internal" href="#task-2-examine-the-allowed-urls-list">Task 2 - Examine the Allowed URLs list</a></li>
 <li><a class="reference internal" href="#task-3-modify-the-allowed-urls-list">Task 3 - Modify the Allowed URLs List</a></li>
-<li><a class="reference internal" href="#task-4-create-explicit-allowed-urls">Task 4 - Create Explicit Allowed URLs</a></li>
+<li><a class="reference internal" href="#task-4-create-explicit-allowed-urls-with-manual-traffic-learning">Task 4 - Create Explicit Allowed URLs with Manual Traffic Learning</a></li>
 <li><a class="reference internal" href="#task-6-lab-cleanup">Task 6 - Lab Cleanup</a></li>
 </ul>
 </li>
@@ -271,7 +271,11 @@
 </li>
 <li><p class="first">Click <strong>Create New Policy</strong> and fill in the page as follows, using lab1 as the name, then click <strong>Create Policy</strong>.</p>
 <blockquote>
-<div><p><a class="reference internal" href="../../_images/lab1-1update.png"><img alt="lab1-1" src="../../_images/lab1-1update.png" style="width: 800px;" /></a></p>
+<div><div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">If you find the images difficult to read, you can click on them to zoom in.</p>
+</div>
+<p><a class="reference internal" href="../../_images/lab1-1update.png"><img alt="lab1-1" src="../../_images/lab1-1update.png" style="width: 800px;" /></a></p>
 </div></blockquote>
 </li>
 <li><p class="first">Navigate to <strong>Local Traffic -&gt; Virtual Servers</strong> and select the “asm_vs” virtual server.</p>
@@ -351,19 +355,41 @@
 </li>
 </ol>
 </div>
-<div class="section" id="task-4-create-explicit-allowed-urls">
-<h2>Task 4 - Create Explicit Allowed URLs<a class="headerlink" href="#task-4-create-explicit-allowed-urls" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="task-4-create-explicit-allowed-urls-with-manual-traffic-learning">
+<h2>Task 4 - Create Explicit Allowed URLs with Manual Traffic Learning<a class="headerlink" href="#task-4-create-explicit-allowed-urls-with-manual-traffic-learning" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic">
-<li><p class="first">Now that we’ve seen how wildcard URLs work, let’s get the site to work with explict URLs.</p>
+<li><p class="first">Now that we’ve seen how wildcard URLs work, let’s get the site to work with explicit URLs.</p>
 </li>
-<li><p class="first">Delete the Wildcard URL /WebGoat/  .</p>
+<li><p class="first">Delete the Wildcard URL <strong>/WebGoat/*</strong> .</p>
 </li>
 <li><p class="first">Click <strong>Apply Policy</strong>.</p>
 </li>
-<li><p class="first">Create explict URLs to allow access to <strong>only</strong> the login page, landing page, and Insecure Login Page.</p>
+<li><p class="first">Due to the number of URLs actually involved in making our application work, we’ll see if we can use manual traffic learning to make the Login page render properly.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">It is much easier to use the automatic policy builder or manaul traffic learning starting with wildcard URL entries.  We’re doing it this way so that you’ll get a better understanding of how ASM works under the hood.</p>
+</div>
 </li>
-<li><p class="first">Hint: Use the information in the Illegal Requests log to build explicit and wildcard URLs to fully render pages.</p>
-<p><a class="reference internal" href="../../_images/lab1-task4.png"><img alt="lab1-task4" src="../../_images/lab1-task4.png" style="width: 800px;" /></a></p>
+<li><p class="first">Return to the learning and blocking settings page once more and configure ASM to always learn URLs:</p>
+<p><a class="reference internal" href="../../_images/lab1-4-1.png"><img alt="lab1-4-1" src="../../_images/lab1-4-1.png" style="width: 800px;" /></a></p>
+</li>
+<li><p class="first">Click <strong>save</strong> then <strong>Apply Policy</strong>.</p>
+</li>
+<li><p class="first">Now, attempt to load the login screen again (<code class="docutils literal notranslate"><span class="pre">http://10.1.10.145/WebGoat/login</span></code>) then return to the Requests log at <strong>Security -&gt; Event Logs -&gt; Application -&gt; Requests</strong>.</p>
+</li>
+<li><p class="first">Find the entry for the login page and click <strong>Accept Request</strong>.</p>
+<p><a class="reference internal" href="../../_images/lab1-4-2.png"><img alt="lab1-4-2" src="../../_images/lab1-4-2.png" style="width: 800px;" /></a></p>
+</li>
+<li><p class="first">Return to <strong>Security -&gt; Application Security -&gt; URLs -&gt; Allowed URLs</strong>.
+|
+There should now be an explicit entry for <strong>/WebGoat/login</strong>.</p>
+</li>
+<li><p class="first">Select the entry and click <strong>Enforce</strong>, then <strong>OK</strong>, then click <strong>Apply Policy</strong> followed by <strong>OK</strong></p>
+<p><a class="reference internal" href="../../_images/lab1-4-3.png"><img alt="lab1-4-3" src="../../_images/lab1-4-3.png" style="width: 800px;" /></a></p>
+</li>
+<li><p class="first">Try to load <code class="docutils literal notranslate"><span class="pre">http://10.1.10.145/WebGoat/login</span></code> again.  It should now partially load but will not look correct.  This is because the application is actually comprised of many other URLs that are not in our list.</p>
+</li>
+<li><p class="first">Repeat these steps a few times and see if you can get the login page to load fully.  Note that you can accept multiple requests at once before returning to the URLs dialog and new requests in the Requests log should be bolded…making it easier to find the issue.</p>
 </li>
 </ol>
 </div>
@@ -372,7 +398,7 @@
 <ol class="arabic simple">
 <li>Let’s cleanup and prepare for the next module by deleting the lab1 policy we’ve been using.</li>
 <li>Navigate to <strong>Security -&gt; Application Security -&gt; Security Policies</strong>.</li>
-<li>Click “Delete”.</li>
+<li>Select lab1 and click <strong>Delete</strong>.</li>
 </ol>
 </div>
 </div>

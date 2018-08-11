@@ -36,3 +36,13 @@ Task 2 - Restricting Method on per URL basis
 #. Attempt to login to ``http://10.1.10.145/WebGoat/login`` .
 
 #. What is the result, and why?
+
+
+Task 3 - Lab Cleanup
+~~~~~~~~~~~~~~~~~~~~
+
+#.  Let's cleanup and prepare for the next module by deleting the lab2 policy we've been using.
+
+#.  Navigate to **Security -> Application Security -> Security Policies**.
+
+#.  Select lab2 and click **Delete**.

@@ -226,6 +226,9 @@
   <ul>
 <li><a class="reference internal" href="#">Lab 2.5: DAST Integration</a><ul>
 <li><a class="reference internal" href="#task-1-create-a-security-policy">Task 1 - Create a Security Policy</a></li>
+<li><a class="reference internal" href="#task-2-import-the-scan-data">Task 2 - Import the Scan Data</a></li>
+<li><a class="reference internal" href="#task-3-remediate-some-vulnerabilities">Task 3 - Remediate some Vulnerabilities</a></li>
+<li><a class="reference internal" href="#task-4-review-the-output">Task 4 - Review the Output</a></li>
 </ul>
 </li>
 </ul>
@@ -283,6 +286,11 @@
 <p class="last">It’s worth mentioning that ASM and Sentinel have more advanced integrations that we will not explore here.  This is mostly due to the logistics of procuring Sentinel accounts for all students attending this lab.  It’s worth mentioning however, that providing an API key will allow you to pull in scan data directly from Sentinel into ASM as well as share ASM site mapping data back to Sentinel in order to improve scanning capabilities.</p>
 </div>
 </li>
+</ol>
+</div>
+<div class="section" id="task-2-import-the-scan-data">
+<h2>Task 2 - Import the Scan Data<a class="headerlink" href="#task-2-import-the-scan-data" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic">
 <li><p class="first">Select the <strong>Vulnerabilities</strong> tab at the top:</p>
 <blockquote>
 <div><p><a class="reference internal" href="../../_images/lab25-3.png"><img alt="lab25-3" src="../../_images/lab25-3.png" style="width: 800px;" /></a></p>
@@ -313,6 +321,11 @@
 <div><p><a class="reference internal" href="../../_images/lab25-8.png"><img alt="lab25-8" src="../../_images/lab25-8.png" style="width: 800px;" /></a></p>
 </div></blockquote>
 </li>
+</ol>
+</div>
+<div class="section" id="task-3-remediate-some-vulnerabilities">
+<h2>Task 3 - Remediate some Vulnerabilities<a class="headerlink" href="#task-3-remediate-some-vulnerabilities" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic">
 <li><p class="first">Select the checkbox at the top to select all of the SQL injection vulnerabilities and click <strong>resolve</strong>.  Note that there are a number of other options including “Resolve and Stage” which would put the changes into staging for further evaluation.</p>
 <blockquote>
 <div><p><a class="reference internal" href="../../_images/lab25-9.png"><img alt="lab25-9" src="../../_images/lab25-9.png" style="width: 800px;" /></a></p>
@@ -328,12 +341,17 @@
 <div><p><a class="reference internal" href="../../_images/lab25-11.png"><img alt="lab25-11" src="../../_images/lab25-11.png" style="width: 800px;" /></a></p>
 </div></blockquote>
 </li>
+</ol>
+</div>
+<div class="section" id="task-4-review-the-output">
+<h2>Task 4 - Review the Output<a class="headerlink" href="#task-4-review-the-output" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic">
 <li><p class="first">Now navigate to <strong>Security -&gt; Application Security -&gt; Parameters -&gt; Parameters List</strong> and you’ll see that the ASM policy has been populated for you.</p>
 <blockquote>
 <div><p><a class="reference internal" href="../../_images/lab25-12.png"><img alt="lab25-12" src="../../_images/lab25-12.png" style="width: 800px;" /></a></p>
 </div></blockquote>
 </li>
-<li><p class="first">Now return to the Vulnerabilities dialog and explore some of the other items if you wish.</p>
+<li><p class="first">Now return to the Vulnerabilities dialog and explore some of the other items if you wish.  <strong>Hint:</strong> You can utilize <strong>Tree View</strong> under <strong>Security -&gt; Application Security -&gt; Policy -&gt; Tree View</strong> to get a summary of what’s in the policy.  Be sure you’ve selected the correct security policy in the dropdown.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last">Data from a vulnerability scan can be a great way to get an ASM policy up and running quickly but you should consider that there may be vulnerabilities in the application beyond the reach of the scanner.  It is therefore a good idea in many instances to enable the Automatic Policy Builder after policy creation to help refine the policy and tighten security over time.</p>

@@ -11,6 +11,8 @@ Lab 2.1: User Session Tracking
         :width: 800px
 ..  |lab21-5| image:: images/lab21-5.png
         :width: 800px
+..  |lab21-ffprivate| image:: images/lab21-ffprivate.png
+        :width: 600px
 ..  |lab21-6| image:: images/lab21-6.png
         :width: 800px
 ..  |lab21-7| image:: images/lab21-7.png
@@ -25,9 +27,9 @@ Task 1: Create a Security Policy and Enable Logging
 
 #.  Login to the BIG-IP with the username: **f5student** and the password **password**
 
-#.  Create a new ASM policy by navigating to **Security -> Application Security -> Security policies**.
+#.  Create a new ASM policy by navigating to **Security -> Application Security -> Security Policies**.
 
-#.  Click **Create New Policy**, fill in the page as follows, and then click **create policy** as shown below.
+#.  Click **Create New Policy**, fill in the page as follows, and then click **Create Policy** as shown below.
     
         |lab21-1|
         
@@ -35,11 +37,11 @@ Task 1: Create a Security Policy and Enable Logging
 
 #.  Navigate to **Local Traffic -> Virtual Servers -> asm_vs -> Security -> Policies**.
 
-#.  **Enable** logging profiles then add the **"Log All Requests"** profile as shown below, and click **update**.
+#.  Ensure the Log Profile is set to  **"Log All Requests"** profile as shown below.
 
         |lab21-2|
 
-        .. NOTE:: While you're here it's a good idea to confirm that the Lab2 security policy is also enabled.
+        .. note:: While you're here it's a good idea to confirm that the Lab2 security policy is also enabled.
 
 
 Task 2: Define Login & Logout Pages
@@ -81,7 +83,10 @@ Task 4: Test Session Tracking
 
 #.  Click on the select all **checkbox** to the far left of the filter bar then **Delete Requests** or if given the option **Delete all Requests**.  This will make it easier to review the logs from the next step.
 
-#.  Open a private browsing window and navigate to ``http://10.1.10.145/WebGoat/login``, then login to the WebGoat app with the credentials **f5student** / **password** .
+#.  In Firefox open a private browsing window and navigate to ``http://10.1.10.145/WebGoat/login``, then login to the WebGoat app with the credentials **f5student** / **password** .
+
+        |lab21-ffprivate|
+
 
 #.  Return to the BIG-IP interface.
 

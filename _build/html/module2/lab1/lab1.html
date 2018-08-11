@@ -268,9 +268,9 @@
 </li>
 <li><p class="first">Login to the BIG-IP with the username: <strong>f5student</strong> and the password <strong>password</strong></p>
 </li>
-<li><p class="first">Create a new ASM policy by navigating to <strong>Security -&gt; Application Security -&gt; Security policies</strong>.</p>
+<li><p class="first">Create a new ASM policy by navigating to <strong>Security -&gt; Application Security -&gt; Security Policies</strong>.</p>
 </li>
-<li><p class="first">Click <strong>Create New Policy</strong>, fill in the page as follows, and then click <strong>create policy</strong> as shown below.</p>
+<li><p class="first">Click <strong>Create New Policy</strong>, fill in the page as follows, and then click <strong>Create Policy</strong> as shown below.</p>
 <blockquote>
 <div><p><a class="reference internal" href="../../_images/lab21-1.png"><img alt="lab21-1" src="../../_images/lab21-1.png" style="width: 800px;" /></a></p>
 <div class="admonition note">
@@ -281,7 +281,7 @@
 </li>
 <li><p class="first">Navigate to <strong>Local Traffic -&gt; Virtual Servers -&gt; asm_vs -&gt; Security -&gt; Policies</strong>.</p>
 </li>
-<li><p class="first"><strong>Enable</strong> logging profiles then add the <strong>“Log All Requests”</strong> profile as shown below, and click <strong>update</strong>.</p>
+<li><p class="first">Ensure the Log Profile is set to  <strong>“Log All Requests”</strong> profile as shown below.</p>
 <blockquote>
 <div><p><a class="reference internal" href="../../_images/lab21-2.png"><img alt="lab21-2" src="../../_images/lab21-2.png" style="width: 800px;" /></a></p>
 <div class="admonition note">
@@ -332,7 +332,10 @@
 </li>
 <li><p class="first">Click on the select all <strong>checkbox</strong> to the far left of the filter bar then <strong>Delete Requests</strong> or if given the option <strong>Delete all Requests</strong>.  This will make it easier to review the logs from the next step.</p>
 </li>
-<li><p class="first">Open a private browsing window and navigate to <code class="docutils literal notranslate"><span class="pre">http://10.1.10.145/WebGoat/login</span></code>, then login to the WebGoat app with the credentials <strong>f5student</strong> / <strong>password</strong> .</p>
+<li><p class="first">In Firefox open a private browsing window and navigate to <code class="docutils literal notranslate"><span class="pre">http://10.1.10.145/WebGoat/login</span></code>, then login to the WebGoat app with the credentials <strong>f5student</strong> / <strong>password</strong> .</p>
+<blockquote>
+<div><p><a class="reference internal" href="../../_images/lab21-ffprivate.png"><img alt="lab21-ffprivate" src="../../_images/lab21-ffprivate.png" style="width: 600px;" /></a></p>
+</div></blockquote>
 </li>
 <li><p class="first">Return to the BIG-IP interface.</p>
 </li>

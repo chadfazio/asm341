@@ -272,7 +272,7 @@
 </li>
 <li><p class="first">Change the enforcement mode to <strong>Blocking</strong>.</p>
 </li>
-<li><p class="first">Expand the <strong>Sessions and Logins</strong> section and select <strong>alarm</strong> and <strong>block</strong>, then click <strong>Save</strong>.</p>
+<li><p class="first">Expand the <strong>Sessions and Logins</strong> section and select <strong>Alarm</strong> and <strong>Block</strong> for <strong>ASM Cookie Hijacking</strong>, then click <strong>Save</strong>.</p>
 </li>
 <li><p class="first">Click <strong>Apply Policy</strong> then click <strong>OK</strong>.</p>
 </li>
@@ -290,9 +290,18 @@
 <div class="section" id="task-2-test-session-hijacking-protection">
 <h2>Task 2 - Test Session Hijacking Protection<a class="headerlink" href="#task-2-test-session-hijacking-protection" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic">
-<li><p class="first">Open a Linux terminal and run <code class="docutils literal notranslate"><span class="pre">BurpSuiteCommunity</span> <span class="pre">&amp;</span></code>.  Accept the defaults and click through to the main window.</p>
+<li><p class="first">From the jumphost desktop, launch Burp Suite using the icon on the desktop. If you are prompted to update Burp, ignore this pop-up by clicking “Close”.</p>
 </li>
-<li><p class="first">Go to the proxy tab and disable intercept so background requests from Chrome don’t get hung up.</p>
+<li><p class="first">Select Temporary Projects and click Next.</p>
+</li>
+<li><p class="first">Leave Defaults checked and click “Start Burp”</p>
+</li>
+<li><p class="first">Select the “Proxy” tab and then turn intercept off.</p>
+<blockquote>
+<div><p><a class="reference internal" href="../../_images/proxyoff.png"><img alt="proxyoff" src="../../_images/proxyoff.png" style="width: 800px;" /></a></p>
+</div></blockquote>
+</li>
+<li><p class="first">Close all running instances of Chrome.</p>
 </li>
 <li><p class="first">Run <code class="docutils literal notranslate"><span class="pre">google-chrome-stable</span> <span class="pre">--incognito</span> <span class="pre">--proxy-server=&quot;http://127.0.0.1:8080&quot;</span></code> in the same or a different terminal.</p>
 </li>
@@ -343,6 +352,8 @@
 </li>
 <li><p class="first">If this were a production configuration, we would likely enable the blocking settings back on the <strong>Session Tracking</strong> page so that these attacks would not be allowed to continue, but for the purposes of maintaining access to the lab environment we’ve elected not to do so.  Feel free to circle back and explore these options at the end of the lab:</p>
 <p><a class="reference internal" href="../../_images/lab22-5.png"><img alt="lab22-5" src="../../_images/lab22-5.png" style="width: 800px;" /></a></p>
+</li>
+<li><p class="first">Please close any instances of Burp and Chrome before continuing.</p>
 </li>
 </ol>
 <div class="line-block">
