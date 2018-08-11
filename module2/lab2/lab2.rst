@@ -35,7 +35,7 @@ Task 1 - Configure Session Hijacking Protection
 
 #.  Change the enforcement mode to **Blocking**.
 
-#.  Expand the **Sessions and Logins** section and select **alarm** and **block**, then click **Save**.
+#.  Expand the **Sessions and Logins** section and select **Alarm** and **Block** for **ASM Cookie Hijacking**, then click **Save**.
 
 #.  Click **Apply Policy** then click **OK**.
 
