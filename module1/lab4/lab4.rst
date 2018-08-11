@@ -173,7 +173,7 @@ Task 5 - Sensitive Parameters
 
 You may have noticed throughout the course of this section that the password field in the ASM Requests log is always obfuscated (like below).  Lets explore why that is.
 
-|lab14-18|
+    |lab14-18|
 
 #.  Navigate to **Security -> Application Security -> Parameters -> Parameters List** and click on the **password** parameter.  You'll note that the **Sensitive Parameter** box is checked.  This feature allows you to ensure that sensitive data (like passwords) are not stored in the logs.  In this case ASM has automatically detected that this is a password field and obfuscated it for us.  This feature can, however, be applied to any parameter in the list.
 
