@@ -47,6 +47,8 @@ Task 1 - Create a new Security Policy
 
 #.  Navigate to **Security -> Application Security -> Security Policies** and click **Create New Policy**
 
+#.  Chose **Advanced** in the upper right hand corner of the policy configuration pane.
+
 #.  Populate the configuration dialog like the one below, then click **Create Policy**.  Be sure to enter the IP address and click add.  This is the IP address of our lab workstation and will tell ASM to treat traffic originating from there as legitimate. This will help to speed up the learning process.
 
     |lab14-1|
@@ -61,9 +63,17 @@ Task 2 - Automatically Populate the Security Policy
 
 #.  Open a new Chrome window and login to WebGoat at ``http://10.1.10.145/WebGoat/login``.
 
-#.  Exercise the application by walking through the menus.  When you get to the Cross Site Scripting exercise, be sure to click through all of the lessons on the horizontal menu at the top (see below).  Feel free to modify values and exercise parameters as well.
+#.  Exercise the application by walking through the menus.  When you get to the Cross Site Scripting exercise, be sure to click through all of the lessons on the horizontal menu at the top (see below).  Feel free to modify values and exercise parameters as well.  Updating the quantities in exercise 7 will produce some good results.
 
     |lab14-3|
+
+#.  Choose **Injection Flaws -> SQL Injection**  from the menu on the left then chose page 7 from the top.
+
+    |lab14-13|
+
+#.  In the **Account Name** field, enter ``Smith`` and click **Get Account Info** (click 5x to simulate traffic).
+
+#.  Also enter the names ``Plane``, ``Snow``, and ``Hershey``, clicking **Get Account Info** after each.
 
 #.  Now return to **Security -> Application Security -> Parameters -> Parameters List**.  You should see that things have changed significantly since our last visit. 
     
@@ -73,7 +83,7 @@ Task 2 - Automatically Populate the Security Policy
     ASM's automatic policy builder analyzes web application traffic and uses it to automatically tune the policy. In this case, it populated our parameters list for us.
 
  
-    .. note:: Your list may not be exactly the same as the one above depending on where browsed in the application.  Since ASM only analyzes traffic and not the site itself, the policy will onlycontain explicit objects for areas of the application that have actually been accessed.  This is an important consideration when electing to use the automatic policy builder.
+    .. note:: Your list may not be exactly the same as the one above depending on where browsed in the application.  Since ASM only analyzes traffic and not the site itself, the policy will only contain explicit objects for areas of the application that have actually been accessed.  This is an important consideration when electing to use the automatic policy builder.
 
 
 Task 3 - Test Parameter-Based Protections
@@ -83,7 +93,7 @@ Task 3 - Test Parameter-Based Protections
 
     |lab14-5|
 
-    .. note:: Notice the message highlighted above.  ASM's automatic policy builder actually has the ability to learn more about the parameter including the expected input type, character set, length, etc, but these can also be manually set.  As the message indicates, if we manually modify the parameter, the Automatic Policy Builder will not attempt to automatically classify it.  The policy builder has yet to draw any conclusions about any of these parameters because it requires more traffic to analyze before making any of those determinations.
+    .. note:: Notice the message highlighted above.  ASM's automatic policy builder actually has the ability to learn more about the parameter including the expected input type, character set, length, etc, but these can also be manually set.  As the message indicates, if we manually modify the parameter, the Automatic Policy Builder will not attempt to automatically classify it.  The policy builder has yet to draw any conclusions about most of these parameters because it requires more traffic to analyze before making any of those determinations.  However, you'll notice that the account parmater has started to be modified due to the traffic we created in the **SQL Injection** exercise.
 
 #.  Select the Parameter Value Type and choose **User-input Value** from the list.
 
@@ -101,7 +111,13 @@ Task 3 - Test Parameter-Based Protections
 
     |lab14-9|
 
+#.  Return to the BIG-IP and navigate to **Security -> Application Security -> IP Address Exceptions**.
+
+#.  Select the **10.1.10.51** entry and click **Delete**.
+
 #.  Click **Apply Policy** then click **OK**.
+
+    .. note:: We've removed our IP Address Exception from the list because we don't want ASM to learn our bad behavior in the steps to come.
 
 #.  Now, logout of WebGoat and try to log back in.  You should get a block page like the one below.  Why?  
     
@@ -115,13 +131,13 @@ Task 3 - Test Parameter-Based Protections
 
     The request log indicates that the username value was 9 characters but we only allow 8 characters in that parameter so the request was blocked.
 
-#.  Click **Accept Request** to declare the request legitimate.  This will automatically modify the parameter's attributes to allow values like that from then on.  You have to be careful with this feature since you could inadvertently loosen the security policy too much.
+#.  Click **Accept Request** to declare the request legitimate.  This will automatically modify the parameter's attributes to allow values of that length from then on.  You have to be careful with this feature since you could inadvertently loosen the security policy too much.
 
 #.  Return to **Security -> Application Security -> Parameters -> Parameters List** and click on the **username** parameter to see what's been changed.
 
     |lab14-12|
 
-    You'll notice that the length has been set back to 10 characters, automatically and that the parameter has been automatically put back in staging.
+    You'll notice that the length has been set back to 10 characters automatically.
 
 #.  Click **Apply Policy** if required.
    
@@ -135,15 +151,7 @@ So you may be wondering why it is that limiting the user's ability to enter data
 
 #.  Choose **Injection Flaws -> SQL Injection**  from the menu on the left then chose page 7 from the top.
 
-    |lab14-13|
-
-#.  In the **Account Name** field, enter ``Smith`` and click **Get Account Info** (click 5x to simulate traffic).
-
-#.  Return to the BIG-IP and navigate to **Security -> Application Security -> IP Address Exceptions**.
-
-#.  Select the **10.1.10.51** entry and click **Delete** then click **Apply Policy**.
-
-#.  Back in WebGoat, in the **Account Name** field, enter ``Smith' or '1'='1`` and click **Get Account Info** (Repeat twice).  The attack should be successful:
+#.  In the **Account Name** field, enter ``Smith' or '1'='1`` and click **Get Account Info** (Repeat twice).  The attack should be successful:
 
     |lab14-14|
 
